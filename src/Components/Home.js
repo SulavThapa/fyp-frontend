@@ -2,10 +2,6 @@ import React, { Component } from 'react'
 import {Button} from 'react-bootstrap';
 import {Form} from 'react-bootstrap';
 import {Card} from 'react-bootstrap';
-import NewAdmin from './Admin';
-import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
-
-
 
 const Home = () => (
         <div style={{marginTop: "10%"}}>
@@ -29,6 +25,5 @@ const Home = () => (
             </Card>
         </div>
 );
-
 
 export default Home;

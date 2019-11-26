@@ -6,7 +6,9 @@ const NavBar = () => (
     <Navbar bg="dark" variant="dark">
     <Link to="/"><Navbar.Brand>React Practice Project</Navbar.Brand></Link>
     <Nav className="mr-auto">
-      <Link to="/admin"><Nav.Link>Admin</Nav.Link></Link>
+      <Link to="/admin">
+        <Nav.Link>Admin</Nav.Link>
+      </Link>
     </Nav>
   </Navbar>
 );

@@ -12,9 +12,9 @@ class App extends React.Component{
       <Router>
         <div>
           <Switch>
-          <Route path="/" component={New} exact/>
-          <Route path="/admin" component={NewAdmin}/>
-          <Route component={Error}/>
+            <Route path="/" component={New} exact/>
+            <Route path="/admin" component={NewAdmin}/>
+            <Route component={Error}/>
           </Switch>
         </div>
       </Router>
