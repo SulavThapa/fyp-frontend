@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import NavBar from '../Navbar';
 import Table from 'react-bootstrap/Table';
 import { Card, Button } from 'react-bootstrap';
@@ -6,6 +6,7 @@ import { Card, Button } from 'react-bootstrap';
 import ModalMaker from './Modal/Modal';
 
 class NewAdmin extends React.Component{
+
     render(){
         return(
             <div>

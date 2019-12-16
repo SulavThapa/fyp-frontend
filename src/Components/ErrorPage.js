@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const Error = () => (
     <h1 style={{textAlign:"center"}}>404 Page Not Found</h1>

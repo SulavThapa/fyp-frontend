@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button, ButtonToolbar, Form } from 'react-bootstrap';
+import { Modal, Button, ButtonToolbar } from 'react-bootstrap';
 import FormFunc from '../Form/Form';
 
 function MyVerticallyCenteredModal(props) {
@@ -16,14 +16,8 @@ function MyVerticallyCenteredModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
+        {}
         <FormFunc/>
-        {/* <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p> */}
-
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
