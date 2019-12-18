@@ -28,15 +28,15 @@ class NewAdmin extends React.Component {
 
     deleteToDo = i => {
         let toDoCopy = this.state.todolist.slice();
-        toDoCopy.splice(i ,1);
-        this.setState({todolist : toDoCopy});
+        toDoCopy.splice(i, 1);
+        this.setState({ todolist: toDoCopy });
     }
 
 
     render() {
         let bulletToDo = this.state.todolist.map((e, i) => {
             return (
-                <SingleToDo todo={e} delete={() => this.deleteToDo(i)}/>
+                <SingleToDo todo={e} delete={() => this.deleteToDo(i)} />
             );
         });
 
@@ -82,7 +82,7 @@ class NewAdmin extends React.Component {
                 <input placeholder="Enter the to-do"
                     value={this.state.currentToDo}
                     onChange={this.onInputChange}></input>
-                <button onClick={this.onClick}>Add</button>
+                <Button variant="primary" onClick={this.onClick}>Add</Button>
                 <br></br>
                 {this.state.todolist.length === 0 ? "No to-do on the list" : <ul>{bulletToDo}</ul>}
             </div >

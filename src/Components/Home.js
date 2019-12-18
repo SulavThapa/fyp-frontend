@@ -1,10 +1,15 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {Button} from 'react-bootstrap';
 import {Form} from 'react-bootstrap';
+import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
+import NewAdmin from './Admin';
 import {Card} from 'react-bootstrap';
 
-const Home = () => (
-        <div style={{marginTop: "10%"}}>
+class Home extends React.Component{
+
+    render(){
+        return(
+            <div style={{marginTop: "10%"}}>
             <Card className='mx-auto' bg="light" text="white" style={{ width: '22rem',height:'20rem', padding: 25}}>
                 <h1 className='new'>Login Here</h1>
                     <Form>
@@ -24,6 +29,10 @@ const Home = () => (
                     </Form>
             </Card>
         </div>
-);
+        );
+
+    };
+}
+
 
 export default Home;

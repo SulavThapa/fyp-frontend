@@ -1,16 +1,16 @@
-import React, {Component} from 'react';
-import {Button} from 'react-bootstrap';
+import React, { Component } from 'react';
+import { Button } from 'react-bootstrap';
 
-class SingleToDo extends React.Component{
-  constructor(){
+class SingleToDo extends React.Component {
+  constructor() {
     super();
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <div>
         <li>{this.props.todo}
-        <Button variant="danger" onClick={this.props.delete}>Delete</Button></li>
+          <Button variant="danger" onClick={this.props.delete}>Delete</Button></li>
       </div>
     );
   }
