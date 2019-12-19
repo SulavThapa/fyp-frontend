@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 
 class SingleToDo extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return (
       <div>

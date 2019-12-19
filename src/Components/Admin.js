@@ -1,7 +1,7 @@
 import React from 'react';
-import NavBar from '../Navbar';
+import NavBar from './NavBar/Navbar';
 import Table from 'react-bootstrap/Table';
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, Nav } from 'react-bootstrap';
 import ModalMaker from './Modal/Modal';
 import SingleToDo from './SingleToDo';
 
@@ -45,7 +45,7 @@ class NewAdmin extends React.Component {
                 <NavBar />
                 <br></br>
                 <Card className='mx-auto' bg="light" text="white" style={{ width: '80%', height: '100%', padding: 25 }}>
-                    <h3 style={{ color: 'black', top: '7%', position: 'absolute', left: '2rem' }}>Class 10 Students data</h3>
+                    <h3 style={{ color: 'black', top: '7%', position: 'absolute', left: '2rem' }}>Bus No.1 Students Details</h3>
                     <ModalMaker />
                     <Button variant="primary" style={{ width: '1in', position: 'absolute', right: '8.5rem', top: '3%' }}>Import</Button>
                     <Button variant="danger" style={{ width: '1in', position: 'absolute', right: '15rem', top: '3%' }}>Delete All</Button>
