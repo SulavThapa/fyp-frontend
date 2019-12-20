@@ -32,7 +32,6 @@ class NewAdmin extends React.Component {
         this.setState({ todolist: toDoCopy });
     }
 
-
     render() {
         let bulletToDo = this.state.todolist.map((e, i) => {
             return (
