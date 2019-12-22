@@ -1,15 +1,72 @@
 import React from 'react';
 import { Modal, Button, ButtonToolbar } from 'react-bootstrap';
 import FormFunc from '../Form/Form';
+import TableDesign from '../Tables/Table';
 
-function MyVerticallyCenteredModal(props) {
+
+class MyVerticallyCenteredModal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      firstName: "",
+      lastName: "",
+      userName: "",
+      items: []
+    };
+  }
+  handleFormSubmit = e => {
+    e.preventDefault();
+
+    let items = [...this.state.items];
+
+    items.push({
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      userName: this.state.userName
+    });
+
+    this.setState({
+      items,
+      firstName: '',
+      lastName: '',
+      userName: ''
+    });
+  };
+
+  handleInputChange = e => {
+    let input = e.target;
+    let name = e.target.name;
+    let value = input.value;
+
+    this.setState({
+      [name]: value
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <br></br>
+        <br></br>
+        <TableDesign items={this.state.items} />
+        <ModalMaker
+          handleFormSubmit={this.handleFormSubmit}
+          handleInputChange={this.handleInputChange}
+          newFirstName={this.state.firstName}
+          newLastName={this.state.lastName}
+          newUserName={this.state.userName} />
+      </div>
+    );
+  };
+}
+
+function MyVerticallyCenteredModalFunction(props) {
   return (
     <Modal
       {...props}
       size=""
       aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
+      centered>
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter" style={{ color: 'black' }}>
           Enter the Details
@@ -32,7 +89,7 @@ function ModalMaker() {
     <ButtonToolbar>
       <Button onClick={() => setModalShow(true)} variant="success" style={{ width: '1in', position: 'absolute', right: '2rem', top: '3%' }}>Add</Button>
 
-      <MyVerticallyCenteredModal
+      <MyVerticallyCenteredModalFunction
         show={modalShow}
         onHide={() => setModalShow(false)}
       />
@@ -40,4 +97,4 @@ function ModalMaker() {
   );
 }
 
-export default ModalMaker;
+export default MyVerticallyCenteredModal;

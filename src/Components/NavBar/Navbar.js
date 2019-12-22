@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => (
   <Navbar bg="dark" variant="dark">
-    <Link to="/"><Navbar.Brand>Simple CRUD App</Navbar.Brand></Link>
+    <Link to="/">
+      <Navbar.Brand>Simple CRUD App</Navbar.Brand>
+    </Link>
     <Nav className="mr-auto">
-      <Link to="/admin">
-        <Nav.Link>Admin</Nav.Link>
-      </Link>
     </Nav>
+    <Form inline>
+      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+      <Button variant="outline-info">Search</Button>
+    </Form>
   </Navbar>
 );
 

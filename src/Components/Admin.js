@@ -1,8 +1,8 @@
 import React from 'react';
 import NavBar from './NavBar/Navbar';
 import Table from 'react-bootstrap/Table';
-import { Card, Button, Nav } from 'react-bootstrap';
-import ModalMaker from './Modal/Modal';
+import { Card, Button} from 'react-bootstrap';
+import MyVerticallyCenteredModal from './Modal/Modal';
 import SingleToDo from './SingleToDo';
 
 class NewAdmin extends React.Component {
@@ -11,9 +11,42 @@ class NewAdmin extends React.Component {
         super(props);
         this.state = {
             todolist: [],
-            currentToDo: ""
+            currentToDo: "",
+            firstName:"",
+            lastName: "",
+            userName: "",
+            items:[]
         };
     }
+
+    // handleFormSubmit = e => {
+    //     e.preventDefault();
+        
+    //     let items = [...this.state.items];
+
+    //     items.push({
+    //         firstName: this.state.firstName,
+    //         lastName: this.state.lastName,
+    //         userName: this.state.userName
+    //     });
+
+    //     this.setState({
+    //         items,
+    //         firstName: '',
+    //         lastName: '',
+    //         userName: ''
+    //     });
+    // };
+
+    // handleInputChange = e => {
+    //     let input =e.target;
+    //     let name = e.target.name;
+    //     let value = input.value;
+
+    //     this.setState({
+    //         [name]: value
+    //     });
+    // };
 
     onInputChange = e => {
         this.setState({ currentToDo: e.target.value });
@@ -44,34 +77,10 @@ class NewAdmin extends React.Component {
                 <NavBar />
                 <br></br>
                 <Card className='mx-auto' bg="light" text="white" style={{ width: '80%', height: '100%', padding: 25 }}>
-                    <h3 style={{ color: 'black', top: '7%', position: 'absolute', left: '2rem' }}>Bus No.1 Students Details</h3>
-                    <ModalMaker />
+                    <h3 style={{ color: 'black', top: '7%', position: 'absolute', left: '2rem', width: '30%' }}>Bus No.1 Students Details</h3>
+                    <MyVerticallyCenteredModal  />
                     <Button variant="primary" style={{ width: '1in', position: 'absolute', right: '8.5rem', top: '3%' }}>Import</Button>
                     <Button variant="danger" style={{ width: '1in', position: 'absolute', right: '15rem', top: '3%' }}>Delete All</Button>
-                    <br></br>
-                    <hr></hr>
-                    <Table striped bordered hover size="sm">
-                        <thead>
-                            <tr>
-                                <th >S.N.</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Sulav</td>
-                                <td>Thapa</td>
-                                <td>@thapasulav21</td>
-                                <td><Button variant="success">Edit</Button></td>
-                                <td><Button variant="danger">Delete</Button></td>
-                            </tr>
-                        </tbody>
-                    </Table>
                     {/* To deploy the simple pop in the project */}
                     {/* <Popup trigger={<button> Trigger</button>} position="center">
                         <div>Popup content here !!</div>
