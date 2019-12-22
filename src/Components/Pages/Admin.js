@@ -5,6 +5,7 @@ import { Card, Button} from 'react-bootstrap';
 import MyVerticallyCenteredModal from '../Modal/Modal';
 import SingleToDo from './SingleToDo';
 
+
 class NewAdmin extends React.Component {
 
     constructor(props) {
@@ -47,7 +48,7 @@ class NewAdmin extends React.Component {
             <div>
                 <NavBar />
                 <br></br>
-                <Card className='mx-auto' bg="light" text="white" style={{ width: '80%', height: '100%', padding: 25 }}>
+                <Card className='mx-auto' bg="light" text="white" style={{ width: '80%', height: '100%', padding: 25, left:'6%' }}>
                     <h3 style={{ color: 'black', top: '7%', position: 'absolute', left: '2rem', width: '30%' }}>Bus No.1 Students Details</h3>
                     <MyVerticallyCenteredModal  />
                     <Button variant="primary" style={{ width: '1in', position: 'absolute', right: '8.5rem', top: '3%' }}>Import</Button>
@@ -64,6 +65,7 @@ class NewAdmin extends React.Component {
                 <Button variant="primary" onClick={this.onClick}>Add</Button>
                 <br></br>
                 {this.state.todolist.length === 0 ? "No to-do on the list" : <ul>{bulletToDo}</ul>}
+
             </div >
         );
     }
