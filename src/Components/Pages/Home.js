@@ -2,8 +2,13 @@ import React, { Component } from 'react'
 import { Button } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
-class Home extends React.Component {
+import { Route } from 'react-router-dom';
+import NewAdmin from './Admin';
 
+class Home extends React.Component {
+    try = () => {
+        this.props.history.push('/admin');
+    }
     render() {
         return (
             <div style={{ marginTop: "10%" }}>
@@ -20,9 +25,10 @@ class Home extends React.Component {
                             <Form.Label>Password</Form.Label>
                             <Form.Control type="password" placeholder="Password" />
                         </Form.Group>
-                        <Button variant="primary" type="submit">
+                        <Button variant="primary" type="submit" onClick={this.try}>
                             Submit
                         </Button>
+                        <Route path="/admin" component={NewAdmin}/>
                     </Form>
                 </Card>
             </div>

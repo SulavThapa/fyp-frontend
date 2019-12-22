@@ -1,8 +1,8 @@
 import React from 'react';
-import NavBar from './NavBar/Navbar';
+import NavBar from '../NavBar/Navbar';
 import Table from 'react-bootstrap/Table';
 import { Card, Button} from 'react-bootstrap';
-import MyVerticallyCenteredModal from './Modal/Modal';
+import MyVerticallyCenteredModal from '../Modal/Modal';
 import SingleToDo from './SingleToDo';
 
 class NewAdmin extends React.Component {
@@ -18,35 +18,6 @@ class NewAdmin extends React.Component {
             items:[]
         };
     }
-
-    // handleFormSubmit = e => {
-    //     e.preventDefault();
-        
-    //     let items = [...this.state.items];
-
-    //     items.push({
-    //         firstName: this.state.firstName,
-    //         lastName: this.state.lastName,
-    //         userName: this.state.userName
-    //     });
-
-    //     this.setState({
-    //         items,
-    //         firstName: '',
-    //         lastName: '',
-    //         userName: ''
-    //     });
-    // };
-
-    // handleInputChange = e => {
-    //     let input =e.target;
-    //     let name = e.target.name;
-    //     let value = input.value;
-
-    //     this.setState({
-    //         [name]: value
-    //     });
-    // };
 
     onInputChange = e => {
         this.setState({ currentToDo: e.target.value });

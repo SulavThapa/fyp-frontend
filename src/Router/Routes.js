@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import New from '../Components/Home';
-import NewAdmin from '../Components/Admin';
-import Error from '../Components/ErrorPage';
+import New from '../Components/Pages/Home';
+import NewAdmin from '../Components/Pages/Admin';
+import Error from '../Components/Pages/ErrorPage';
 
 
 class RoutePage extends React.Component {
@@ -13,7 +13,6 @@ class RoutePage extends React.Component {
           <Switch>
             <Route path="/" component={New} exact />
             <Route path="/admin" component={NewAdmin} />
-            <Route path="/staff" component={New} />
             <Route component={Error} />
           </Switch>
         </div>
