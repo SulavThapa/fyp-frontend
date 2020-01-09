@@ -1,90 +1,98 @@
 import React, { Component } from 'react';
 import './test.css';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faHome, faBox } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faHome, faBox);
 
 class TestNav extends React.Component {
   render() {
     return (
       <React.Fragment>
 
-        <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-          <a className="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Sulav Thapa FYP</a>
+        <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+          <a className="navbar-brand col-sm-3 col-md-2 mr-0" href="#">SECURE</a>
         </nav>
 
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-          <div class="sidebar-sticky">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  <span data-feather="home"></span>
-                  Dashboard <span class="sr-only">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file"></span>
-                  Orders
-            </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
-                  Products
-            </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="users"></span>
-                  Customers
-            </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="bar-chart-2"></span>
-                  Reports
-            </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="layers"></span>
-                  Integrations
-            </a>
-              </li>
-            </ul>
+        <div className="container-fluid">
+          <div className="row">
+            <nav className="col-md-2 d-none d-md-block bg-light sidebar">
+              <div className="sidebar-sticky">
+                <ul className="nav flex-column">
+                  <li className="nav-item">
+                    <a className="nav-link active" href="#">
+                      <FontAwesomeIcon className="side" icon="home"/>
+                      Dashboard <span className="sr-only">(current)</span>
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      <FontAwesomeIcon className="side" icon="box"/>
+                      Orders
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      <span data-feather="shopping-cart"></span>
+                      Products
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      <span data-feather="users"></span>
+                      Customers
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      <span data-feather="bar-chart-2"></span>
+                      Reports
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      <span data-feather="layers"></span>
+                      Integrations
+                    </a>
+                  </li>
+                </ul>
 
-            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span>Saved reports</span>
-              <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-                <span data-feather="plus-circle"></span>
-              </a>
-            </h6>
-            <ul class="nav flex-column mb-2">
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Current month
-            </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Last quarter
-            </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Social engagement
-            </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Year-end sale
-            </a>
-              </li>
-            </ul>
+                <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                  <span>Saved reports</span>
+                  <a className="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                  </a>
+                </h6>
+                <ul className="nav flex-column mb-2">
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      <span data-feather="file-text"></span>
+                      Current month
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      <span data-feather="file-text"></span>
+                      Last quarter
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      <span data-feather="file-text"></span>
+                      Social engagement
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      <span data-feather="file-text"></span>
+                      Year-end sale
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
           </div>
-        </nav>
+        </div>
       </React.Fragment>
     );
   };

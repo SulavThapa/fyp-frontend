@@ -22,20 +22,20 @@ class NewAdmin extends React.Component {
 
     onInputChange = e => {
         this.setState({ currentToDo: e.target.value });
-    }
+    };
 
     onClick = () => {
         let toDoCopy = this.state.todolist.slice();
         toDoCopy.push(this.state.currentToDo);
 
         this.setState({ todolist: toDoCopy, currentToDo: "" })
-    }
+    };
 
     deleteToDo = i => {
         let toDoCopy = this.state.todolist.slice();
         toDoCopy.splice(i, 1);
         this.setState({ todolist: toDoCopy });
-    }
+    };
 
     render() {
         let bulletToDo = this.state.todolist.map((e, i) => {
