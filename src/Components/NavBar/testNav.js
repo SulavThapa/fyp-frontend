@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import './test.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHome, faBox } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faTable } from '@fortawesome/free-solid-svg-icons';
+import {Link} from "react-router-dom";
 
-library.add(faHome, faBox);
+library.add(faHome, faTable);
 
 class TestNav extends React.Component {
   render() {
@@ -12,7 +13,9 @@ class TestNav extends React.Component {
       <React.Fragment>
 
         <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-          <a className="navbar-brand col-sm-3 col-md-2 mr-0" href="#">SECURE</a>
+          <Link to="/">
+            <a className="navbar-brand col-sm-3 col-md-2 mr-0" href="#">SECURE</a>
+          </Link>
         </nav>
 
         <div className="container-fluid">
@@ -21,16 +24,20 @@ class TestNav extends React.Component {
               <div className="sidebar-sticky">
                 <ul className="nav flex-column">
                   <li className="nav-item">
-                    <a className="nav-link active" href="#">
+                    <Link to="/admin">
+                    <a className="nav-link" href="#">
                       <FontAwesomeIcon className="side" icon="home"/>
-                      Dashboard <span className="sr-only">(current)</span>
+                      Map <span className="sr-only">(current)</span>
                     </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      <FontAwesomeIcon className="side" icon="box"/>
-                      Orders
-                    </a>
+                    <Link to="/details">
+                      <a className="nav-link" href="#">
+                        <FontAwesomeIcon className="side" icon="table" style={{color: '#49494b'}}/>
+                        Details
+                      </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="#">

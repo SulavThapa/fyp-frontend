@@ -46,7 +46,7 @@ class NewAdmin extends React.Component {
         });
 
         return (
-            <div>
+            <React.Fragment>
                 <TestNav />
 
                 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
@@ -54,9 +54,8 @@ class NewAdmin extends React.Component {
                     <MapHere />
                     <MyVerticallyCenteredModal />
                 </main>
+            </React.Fragment>
 
-
-            </div >
         );
     }
 }
