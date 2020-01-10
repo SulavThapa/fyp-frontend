@@ -47,7 +47,7 @@ class MyVerticallyCenteredModal extends React.Component {
     return (
       <div>
         <br></br>
-        <TableDesign items={this.state.items} />
+        {/*<TableDesign items={this.state.items} />*/}
         <ModalMaker
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}

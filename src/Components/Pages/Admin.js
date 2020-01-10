@@ -4,6 +4,7 @@ import { Card, Button } from 'react-bootstrap';
 import MyVerticallyCenteredModal from '../Modal/Modal';
 import SingleToDo from './SingleToDo';
 import TestNav from '../NavBar/testNav';
+import MapHere from "../Map/map";
 
 
 class NewAdmin extends React.Component {
@@ -49,6 +50,8 @@ class NewAdmin extends React.Component {
                 <TestNav />
 
                 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+
+                    <MapHere />
                     <MyVerticallyCenteredModal />
                 </main>
 
