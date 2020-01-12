@@ -29,7 +29,7 @@ class TableDesign extends React.Component {
                 </thead>
                 <tbody>
                 <tr>
-                  <td>testfirstName</td>
+                  <td>testFirstName</td>
                   <td>testLastName</td>
                   <td>@test</td>
                   <td><Button variant="success">Edit</Button></td>

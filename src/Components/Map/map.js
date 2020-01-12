@@ -15,10 +15,10 @@ class MapHere extends React.Component{
             <React.Fragment>
                 <div
                     className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h2 style={{left: '3%', marginTop: '1%'}}>Maps</h2>
+                <h2 style={{left: '3%', marginTop: '0%'}}>Maps</h2>
                 </div>
 
-                <Card style={{height: '795px', width: '100%', marginTop: '1%'}}>
+                <Card style={{height: '590px', width: '100%', marginTop: '0%'}}>
                     <Map
                         google={this.props.google}
                         zoom={17}

@@ -14,7 +14,8 @@ class TestNav extends React.Component {
 
         <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
           <Link to="/">
-            <a className="navbar-brand col-sm-3 col-md-2 mr-0" href="#">SECURE</a>
+            <a className="navbar-brand col-sm-3 col-md-2 mr-0">
+              <span style={{fontFamily: 'sans-serif', color: 'white'}}>SECURE</span></a>
           </Link>
         </nav>
 
@@ -25,7 +26,7 @@ class TestNav extends React.Component {
                 <ul className="nav flex-column">
                   <li className="nav-item">
                     <Link to="/admin">
-                    <a className="nav-link" href="#">
+                    <a className="nav-link">
                       <FontAwesomeIcon className="side" icon="home"/>
                       Map <span className="sr-only">(current)</span>
                     </a>

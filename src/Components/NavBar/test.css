@@ -110,3 +110,7 @@ body {
 .side{
   margin-right: 5px;
 }
+
+a:link{
+  text-decoration: none;
+}
