@@ -2,30 +2,6 @@ import React, { Component } from 'react';
 import { Button, Form } from 'react-bootstrap';
 
 class FormFunc extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     firstName: "",
-  //     lastName: "",
-  //     userName: ""
-  //   };
-  // }
-
-  // onFirstNameChange = e => {
-  //   this.setState({ firstName: e.target.value });
-  // }
-
-  // onLasttNameChange = e => {
-  //   this.setState({ lastName: e.target.value });
-  // }
-
-  // onUserNameChange = e => {
-  //   this.setState({ userName: e.target.value });
-  // }
-
-  // onClick = () => {
-  // }
-
 
   render() {
     return (

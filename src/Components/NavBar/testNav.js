@@ -2,10 +2,16 @@ import React, { Component } from 'react';
 import './test.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHome, faTable } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faTable, faUnlock, faBus } from '@fortawesome/free-solid-svg-icons';
 import {Link} from "react-router-dom";
 
-library.add(faHome, faTable);
+library.add(faHome, faTable, faUnlock, faBus);
+
+const testAlert = () => (
+  <div className="alert alert-warning" role="alert">
+    This is a warning alert—check it out!
+  </div>
+);
 
 class TestNav extends React.Component {
   render() {
@@ -27,74 +33,34 @@ class TestNav extends React.Component {
                   <li className="nav-item">
                     <Link to="/admin">
                     <a className="nav-link">
-                      <FontAwesomeIcon className="side" icon="home"/>
-                      Map <span className="sr-only">(current)</span>
+                      <FontAwesomeIcon className="side" icon="home" style={{color: '#49494b'}}/>
+                      Map
                     </a>
                     </Link>
                   </li>
                   <li className="nav-item">
                     <Link to="/details">
-                      <a className="nav-link" href="#">
+                      <a className="nav-link">
                         <FontAwesomeIcon className="side" icon="table" style={{color: '#49494b'}}/>
                         Details
                       </a>
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      <span data-feather="shopping-cart"></span>
-                      Products
-                    </a>
+                    <Link to="/busDetails">
+                      <a className="nav-link">
+                        <FontAwesomeIcon className="side" icon="bus" style={{color: '#49494b'}}/>
+                        Bus Info
+                      </a>
+                    </Link>
                   </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      <span data-feather="users"></span>
-                      Customers
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      <span data-feather="bar-chart-2"></span>
-                      Reports
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      <span data-feather="layers"></span>
-                      Integrations
-                    </a>
-                  </li>
-                </ul>
-
-                <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                  <span>Saved reports</span>
-                  <a className="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-                  </a>
-                </h6>
-                <ul className="nav flex-column mb-2">
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      <span data-feather="file-text"></span>
-                      Current month
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      <span data-feather="file-text"></span>
-                      Last quarter
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      <span data-feather="file-text"></span>
-                      Social engagement
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      <span data-feather="file-text"></span>
-                      Year-end sale
-                    </a>
+                  <li className="nav-item" >
+                    <Link to="/">
+                      <a className="nav-link">
+                        <FontAwesomeIcon className="side" icon="unlock" style={{color: '#49494b'}}/>
+                        Log Out
+                      </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
