@@ -4,7 +4,8 @@ import { Form } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 import { Route } from 'react-router-dom';
 import NewAdmin from './Admin';
-import './testHome.css'
+
+
 class Home extends React.Component {
     try = () => {
         this.props.history.push('/admin');
@@ -36,6 +37,5 @@ class Home extends React.Component {
 
     };
 }
-
 
 export default Home;

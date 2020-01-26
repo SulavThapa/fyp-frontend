@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 
 library.add(faHome, faTable, faUnlock, faBus);
 
-const testAlert = () => (
+const testAlert = (
   <div className="alert alert-warning" role="alert">
     This is a warning alert—check it out!
   </div>

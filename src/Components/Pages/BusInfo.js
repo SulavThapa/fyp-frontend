@@ -17,7 +17,7 @@ class BusInfo extends React.Component{
               <MyVerticallyCenteredModal/>
             </div>
 
-            <Card style={{height: '795px', width: '100%', marginTop: '1%', padding: '2%'}}>
+            <Card className="h-75 d-inline-block" style={{height: '100%', width: '100%', marginTop: '1%', padding: '2%'}}>
               <Table striped bordered hover size="sm">
                 <thead>
                 <tr>
