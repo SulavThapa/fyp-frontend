@@ -1,7 +1,4 @@
 import React from 'react';
-import NavBar from '../NavBar/Navbar';
-import { Card, Button } from 'react-bootstrap';
-import MyVerticallyCenteredModal from '../Modal/Modal';
 import SingleToDo from './SingleToDo';
 import TestNav from '../NavBar/testNav';
 import MapHere from "../Map/map";
