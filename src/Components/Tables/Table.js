@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Table, Button, Card} from 'react-bootstrap';
+import {Table, Button, Card, ButtonGroup} from 'react-bootstrap';
 import TestNav from "../NavBar/testNav";
 import MapHere from "../Map/map";
 import MyVerticallyCenteredModal from "../Modal/Modal";
@@ -13,7 +13,11 @@ class TableDesign extends React.Component {
             <div
                 className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
               <h2 style={{left: '3%', marginTop: '1%'}}>Student Details</h2>
-              <MyVerticallyCenteredModal/>
+              <ButtonGroup size="mb-2">
+                {/*<Button variant="primary" style={{height: '38px', marginTop: '19%'}}>Import</Button>*/}
+                {/*<Button variant="success" style={{height: '38px', marginTop: '19%'}} onClick={MyVerticallyCenteredModal}>Save</Button>*/}
+                <MyVerticallyCenteredModal/>
+              </ButtonGroup>
             </div>
 
             <Card style={{height: '795px', width: '100%', marginTop: '1%', padding: '2%'}}>
@@ -23,8 +27,8 @@ class TableDesign extends React.Component {
                   <th>First Name</th>
                   <th>Last Name</th>
                   <th>Username</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
+                  <th>Class</th>
+                  <th>Age</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -32,8 +36,8 @@ class TableDesign extends React.Component {
                   <td>testFirstName</td>
                   <td>testLastName</td>
                   <td>@test</td>
-                  <td><Button variant="success">Edit</Button></td>
-                  <td><Button variant="danger">Delete</Button></td>
+                  <td>10</td>
+                  <td>17</td>
                 </tr>
                 </tbody>
               </Table>

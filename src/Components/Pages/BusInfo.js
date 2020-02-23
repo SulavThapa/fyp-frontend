@@ -24,8 +24,8 @@ class BusInfo extends React.Component{
                   <th>S.N</th>
                   <th>Bus Number</th>
                   <th>Driver Name</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
+                  {/*<th>Edit</th>*/}
+                  {/*<th>Delete</th>*/}
                 </tr>
                 </thead>
                 <tbody>
@@ -33,8 +33,8 @@ class BusInfo extends React.Component{
                   <td>1</td>
                   <td>Ba4pa5454</td>
                   <td>Ram Bahadur</td>
-                  <td><Button variant="success">Edit</Button></td>
-                  <td><Button variant="danger">Delete</Button></td>
+                  {/*<td><Button variant="success">Edit</Button></td>*/}
+                  {/*<td><Button variant="danger">Delete</Button></td>*/}
                 </tr>
                 </tbody>
               </Table>

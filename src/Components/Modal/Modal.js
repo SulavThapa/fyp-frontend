@@ -87,7 +87,6 @@ function ModalMaker() {
   return (
     <ButtonToolbar>
       <Button onClick={() => setModalShow(true)} variant="success">Add</Button>
-
       <MyVerticallyCenteredModalFunction
         show={modalShow}
         onHide={() => setModalShow(false)}
