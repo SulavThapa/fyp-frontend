@@ -38,22 +38,22 @@ class TestNav extends React.Component {
                     </a>
                     </Link>
                   </li>
-                  {/*<li className="nav-item">*/}
-                  {/*  <Link to="/details">*/}
-                  {/*    <a className="nav-link">*/}
-                  {/*      <FontAwesomeIcon className="side" icon="table" style={{color: '#49494b'}}/>*/}
-                  {/*      Details*/}
-                  {/*    </a>*/}
-                  {/*  </Link>*/}
-                  {/*</li>*/}
-                  {/*<li className="nav-item">*/}
-                  {/*  <Link to="/busDetails">*/}
-                  {/*    <a className="nav-link">*/}
-                  {/*      <FontAwesomeIcon className="side" icon="bus" style={{color: '#49494b'}}/>*/}
-                  {/*      Bus Info*/}
-                  {/*    </a>*/}
-                  {/*  </Link>*/}
-                  {/*</li>*/}
+                  <li className="nav-item">
+                    <Link to="/details">
+                      <a className="nav-link">
+                        <FontAwesomeIcon className="side" icon="table" style={{color: '#49494b'}}/>
+                        Details
+                      </a>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/busDetails">
+                      <a className="nav-link">
+                        <FontAwesomeIcon className="side" icon="bus" style={{color: '#49494b'}}/>
+                        Bus Info
+                      </a>
+                    </Link>
+                  </li>
                   <li className="nav-item" >
                     <Link to="/">
                       <a className="nav-link">

@@ -11,17 +11,13 @@ class MapHere extends React.Component{
                     className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h2>Maps</h2>
                 </div>
-
-                <div className="h-75 d-inline-block w-100 p-3">
-                    <Card style={{height: '790px', backgroundColor: '#999'}}>
+                    <Card className="vh-100" style={{ backgroundColor: '#999'}}>
                         <Map
                             google={this.props.google}
                             zoom={17}
                             initialCenter={{ lat: 27.7087074, lng: 85.3237989}}
                         />
                     </Card>
-                </div>
-
             </React.Fragment>
         );
     }
