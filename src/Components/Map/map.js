@@ -13,9 +13,9 @@ class MapHere extends React.Component{
                 </div>
                     <Card className="vh-100" style={{ backgroundColor: '#999'}}>
                         <Map
-                            google={this.props.google}
-                            zoom={17}
-                            initialCenter={{ lat: 27.7087074, lng: 85.3237989}}
+                          google={this.props.google}
+                          zoom={17}
+                          initialCenter={{ lat: 27.7087074, lng: 85.3237989}}
                         />
                     </Card>
             </React.Fragment>

@@ -2,9 +2,24 @@ import React, {Component} from "react";
 import TestNav from "../NavBar/testNav";
 import MyVerticallyCenteredModal from "../Modal/Modal";
 import {Button, Card, Table} from "react-bootstrap";
+import axios from 'axios';
 
 
 class BusInfo extends React.Component{
+
+  state = {
+    drivers: []
+  };
+
+  componentDidMount()
+  {
+    axios.get(`http://localhost:5000/drivers`)
+      .then(res => {
+        this.setState({drivers: res.data});
+        console.log(res);
+      }).catch(err => console.log('cannot access',err));
+  }
+
   render() {
     return(
         <React.Fragment>
@@ -22,20 +37,25 @@ class BusInfo extends React.Component{
                 <thead>
                 <tr>
                   <th>S.N</th>
-                  <th>Bus Number</th>
-                  <th>Driver Name</th>
+                  <th>Full Name</th>
+                  <th>Temporary Address</th>
+                  <th>Permanent Address</th>
+                  <th>Phone</th>
+                  <th>Marital Status</th>
                   {/*<th>Edit</th>*/}
                   {/*<th>Delete</th>*/}
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Ba4pa5454</td>
-                  <td>Ram Bahadur</td>
-                  {/*<td><Button variant="success">Edit</Button></td>*/}
-                  {/*<td><Button variant="danger">Delete</Button></td>*/}
-                </tr>
+                  {this.state.drivers.map( driver =>
+                  <tr>
+                    <td>{driver.id}</td>
+                    <td>{driver.fullName}</td>
+                    <td>{driver.temporaryAddress}</td>
+                    <td>{driver.permanentAddress}</td>
+                    <td>{driver.phone}</td>
+                    <td>{driver.maritalStatus}</td>
+                  </tr>)}
                 </tbody>
               </Table>
             </Card>
