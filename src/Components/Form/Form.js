@@ -1,44 +1,76 @@
 import React, { Component } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Row, Col } from 'react-bootstrap';
+import axios from 'axios';
 
 class FormFunc extends React.Component {
 
+  state: {
+    id: '',
+    fullName: '',
+    temporaryAddress: '',
+    permanentAddress: '',
+    phone: '',
+    maritalStatus:''
+  };
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value })
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+
+    const driver = {
+      id: this.state.id,
+      fullName: this.state.fullName,
+      temporaryAddress: this.state.temporaryAddress,
+      permanentAddress: this.state.permanentAddress,
+      phone: this.state.phone,
+      maritalStatus:this.state.maritalStatus
+    };
+
+    // eslint-disable-next-line no-unused-expressions
+    axios.post(`http://localhost:5000/drivers`, {driver})
+      .then( res => {
+        console.log(res);
+        console.log(res.data);
+      })
+      .catch(err => {
+        console.log(`This is the ${err} message.`)
+      })
+    };
+  
   render() {
     return (
-      <Form onhandleSubmit={this.props.handleSubmit}>
-        <Form.Group controlId="formBasicText">
-          <Form.Label>First Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter First Name"
-            value={this.props.newFirstName}
-            onChange={this.props.handleInputChange}
-            // value={this.state.firstName}
-            // onChange={this.onFirstNameChange} 
-            />
-          <Form.Text className="text-muted">
-          </Form.Text>
-        </Form.Group>
-
-        <Form.Group controlId="formBasicText">
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter Last Name"
-            value={this.props.newLastName}
-            onChange={this.props.handleInputChange}
-            // value={this.state.lastName}
-            // onChange={this.onLastNameChange} 
-            />
-        </Form.Group>
-
-        <Form.Group controlId="formBasicText">
-          <Form.Label>UserName</Form.Label>
-          <Form.Control type="text" placeholder="UserName"
-            value={this.props.newUserName}
-            onChange={this.props.handleInputChange}
-            // value={this.state.userName}
-            // onChange={this.onUserNameChange} 
-            />
-        </Form.Group>
-
-        <Button variant="primary" type="submit" value="Submit">
+      <Form onSubmit={this.handleSubmit}>
+        <Row>
+          <Col>
+            <Form.Control placeholder="Id" type="text" name="id" onChange={this.handleChange}/>
+          </Col>
+          <Col>
+            <Form.Control placeholder="Full name" type="text" name="fullName" onChange={this.handleChange}/>
+          </Col>
+        </Row>
+        <br/>
+        <Row>
+          <Col>
+            <Form.Control placeholder="Temporary Address" type="text" name="temporaryAddress" onChange={this.handleChange}/>
+          </Col>
+          <Col>
+            <Form.Control placeholder="Permanent Address" type="text" name="permanentAddress" onChange={this.handleChange}/>
+          </Col>
+        </Row>
+        <br/>
+        <Row>
+          <Col>
+            <Form.Control placeholder="Phone" type="text" name="phone" onChange={this.handleChange}/>
+          </Col>
+          <Col>
+            <Form.Control placeholder="Marital Address" type="text" name="maritalStatus" onChange={this.handleChange}/>
+          </Col>
+        </Row>
+        <br/>
+        <Button variant="primary" type="submit">
           Submit
         </Button>
       </Form>

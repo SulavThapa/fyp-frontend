@@ -22,8 +22,8 @@ class TableDesign extends React.Component {
 
             <Card style={{height: '795px', width: '100%', marginTop: '1%', padding: '2%'}}>
               <Table striped bordered hover size="sm">
-                <thead>
-                <tr>
+                <thead className="thead-dark">
+                <tr style={{height: '35px'}}>
                   <th>First Name</th>
                   <th>Last Name</th>
                   <th>Username</th>
@@ -32,7 +32,7 @@ class TableDesign extends React.Component {
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
+                <tr style={{height: '35px'}}>
                   <td>testFirstName</td>
                   <td>testLastName</td>
                   <td>@test</td>

@@ -5,55 +5,13 @@ import TableDesign from '../Tables/Table';
 
 
 class MyVerticallyCenteredModal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      firstName: "",
-      lastName: "",
-      userName: "",
-      items: []
-    };
-  }
-  handleFormSubmit = e => {
-    e.preventDefault();
-
-    let items = [...this.state.items];
-
-    items.push({
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      userName: this.state.userName
-    });
-
-    this.setState({
-      items,
-      firstName: '',
-      lastName: '',
-      userName: ''
-    });
-  };
-
-  handleInputChange = e => {
-    let input = e.target;
-    let name = e.target.name;
-    let value = input.value;
-
-    this.setState({
-      [name]: value
-    });
-  };
 
   render() {
     return (
       <div>
         <br></br>
         {/*<TableDesign items={this.state.items} />*/}
-        <ModalMaker
-          handleFormSubmit={this.handleFormSubmit}
-          handleInputChange={this.handleInputChange}
-          newFirstName={this.state.firstName}
-          newLastName={this.state.lastName}
-          newUserName={this.state.userName} />
+        <ModalMaker/>
       </div>
     );
   };

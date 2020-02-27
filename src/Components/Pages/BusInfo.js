@@ -34,8 +34,8 @@ class BusInfo extends React.Component{
 
             <Card className="h-75 d-inline-block" style={{height: '100%', width: '100%', marginTop: '1%', padding: '2%'}}>
               <Table striped bordered hover size="sm">
-                <thead>
-                <tr>
+                <thead className="thead-dark">
+                <tr style={{height: '40px'}}>
                   <th>S.N</th>
                   <th>Full Name</th>
                   <th>Temporary Address</th>
@@ -48,13 +48,15 @@ class BusInfo extends React.Component{
                 </thead>
                 <tbody>
                   {this.state.drivers.map( driver =>
-                  <tr>
+                  <tr style={{height: '35px'}}>
                     <td>{driver.id}</td>
                     <td>{driver.fullName}</td>
                     <td>{driver.temporaryAddress}</td>
                     <td>{driver.permanentAddress}</td>
                     <td>{driver.phone}</td>
                     <td>{driver.maritalStatus}</td>
+                    {/*<td><Button className="btn-success">Edit</Button></td>*/}
+                    {/*<td><Button className="btn-danger">Delete</Button></td>*/}
                   </tr>)}
                 </tbody>
               </Table>
