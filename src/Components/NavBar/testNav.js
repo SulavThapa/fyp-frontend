@@ -33,7 +33,7 @@ class TestNav extends React.Component {
                   <li className="nav-item">
                     <Link to="/admin">
                     <a className="nav-link">
-                      <FontAwesomeIcon className="side" icon="home" style={{color: '#49494b'}}/>
+                      <FontAwesomeIcon className="side" icon="home" style={{color: '#357d7b'}}/>
                       Map
                     </a>
                     </Link>
@@ -41,7 +41,7 @@ class TestNav extends React.Component {
                   <li className="nav-item">
                     <Link to="/details">
                       <a className="nav-link">
-                        <FontAwesomeIcon className="side" icon="table" style={{color: '#49494b'}}/>
+                        <FontAwesomeIcon className="side" icon="table" style={{color: '#357d7b'}}/>
                         Details
                       </a>
                     </Link>
@@ -49,7 +49,7 @@ class TestNav extends React.Component {
                   <li className="nav-item">
                     <Link to="/busDetails">
                       <a className="nav-link">
-                        <FontAwesomeIcon className="side" icon="bus" style={{color: '#49494b'}}/>
+                        <FontAwesomeIcon className="side" icon="bus" style={{color: '#357d7b'}}/>
                         Bus Info
                       </a>
                     </Link>
@@ -57,7 +57,7 @@ class TestNav extends React.Component {
                   <li className="nav-item" >
                     <Link to="/">
                       <a className="nav-link">
-                        <FontAwesomeIcon className="side" icon="unlock" style={{color: '#49494b'}}/>
+                        <FontAwesomeIcon className="side" icon="unlock" style={{color: '#357d7b'}}/>
                         Log Out
                       </a>
                     </Link>

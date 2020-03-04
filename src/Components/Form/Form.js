@@ -18,20 +18,21 @@ class FormFunc extends React.Component {
   };
 
   handleSubmit = e => {
-    e.preventDefault();
+    // e.preventDefault();
+
 
     axios.post(`http://localhost:5000/drivers`,
       {
-        id: this.state.id,
-        fullName: this.state.fullName,
-        temporaryAddress: this.state.temporaryAddress,
-        permanentAddress: this.state.permanentAddress,
-        phone: this.state.phone,
-        maritalStatus:this.state.maritalStatus
+        id: `${this.state.id}`,
+        fullName: `${this.state.fullName}`,
+        temporaryAddress: `${this.state.temporaryAddress}`,
+        permanentAddress: `${this.state.permanentAddress}`,
+        phone: `${this.state.phone}`,
+        maritalStatus:`${this.state.maritalStatus}`
       } ,
       {
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+        'Content-Type': 'application/json; charset=UTF-8'
       }
     })
       .then( res => {
