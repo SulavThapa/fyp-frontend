@@ -20,26 +20,29 @@ class FormFunc extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    const driver = {
-      id: this.state.id,
-      fullName: this.state.fullName,
-      temporaryAddress: this.state.temporaryAddress,
-      permanentAddress: this.state.permanentAddress,
-      phone: this.state.phone,
-      maritalStatus:this.state.maritalStatus
-    };
-
-    // eslint-disable-next-line no-unused-expressions
-    axios.post(`http://localhost:5000/drivers`, {driver})
+    axios.post(`http://localhost:5000/drivers`,
+      {
+        id: this.state.id,
+        fullName: this.state.fullName,
+        temporaryAddress: this.state.temporaryAddress,
+        permanentAddress: this.state.permanentAddress,
+        phone: this.state.phone,
+        maritalStatus:this.state.maritalStatus
+      } ,
+      {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      }
+    })
       .then( res => {
         console.log(res);
         console.log(res.data);
       })
       .catch(err => {
-        console.log(`This is the ${err} message.`)
+        console.log(`This is the ${err} error.`)
       })
     };
-  
+
   render() {
     return (
       <Form onSubmit={this.handleSubmit}>
@@ -66,7 +69,7 @@ class FormFunc extends React.Component {
             <Form.Control placeholder="Phone" type="text" name="phone" onChange={this.handleChange}/>
           </Col>
           <Col>
-            <Form.Control placeholder="Marital Address" type="text" name="maritalStatus" onChange={this.handleChange}/>
+            <Form.Control placeholder="Marital Status" type="text" name="maritalStatus" onChange={this.handleChange}/>
           </Col>
         </Row>
         <br/>

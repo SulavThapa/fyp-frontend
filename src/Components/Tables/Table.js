@@ -3,8 +3,23 @@ import {Table, Button, Card, ButtonGroup} from 'react-bootstrap';
 import TestNav from "../NavBar/testNav";
 import MapHere from "../Map/map";
 import MyVerticallyCenteredModal from "../Modal/Modal";
+import axios from "axios";
 
 class TableDesign extends React.Component {
+
+  state = {
+    busOneStudents: []
+  };
+
+  componentDidMount()
+  {
+    axios.get(`http://localhost:5000/busOneStudents`)
+      .then(res => {
+        this.setState({busOneStudents: res.data});
+        console.log(res);
+      }).catch(err => console.log('cannot access',err));
+  }
+
   render() {
     return (
         <React.Fragment>
@@ -16,7 +31,7 @@ class TableDesign extends React.Component {
               <ButtonGroup size="mb-2">
                 {/*<Button variant="primary" style={{height: '38px', marginTop: '19%'}}>Import</Button>*/}
                 {/*<Button variant="success" style={{height: '38px', marginTop: '19%'}} onClick={MyVerticallyCenteredModal}>Save</Button>*/}
-                <MyVerticallyCenteredModal/>
+                {/*<MyVerticallyCenteredModal/>*/}
               </ButtonGroup>
             </div>
 
@@ -24,21 +39,27 @@ class TableDesign extends React.Component {
               <Table striped bordered hover size="sm">
                 <thead className="thead-dark">
                 <tr style={{height: '35px'}}>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
+                  <th>Id</th>
+                  <th>Name</th>
                   <th>Class</th>
-                  <th>Age</th>
+                  <th>Section</th>
+                  <th>Parent Name</th>
+                  <th>Parents Number</th>
+                  <th>Address</th>
                 </tr>
                 </thead>
                 <tbody>
+                {this.state.busOneStudents.map( busOneStudent =>
                 <tr style={{height: '35px'}}>
-                  <td>testFirstName</td>
-                  <td>testLastName</td>
-                  <td>@test</td>
-                  <td>10</td>
-                  <td>17</td>
+                  <td>{busOneStudent.id}</td>
+                  <td>{busOneStudent.studentName}</td>
+                  <td>{busOneStudent.class}</td>
+                  <td>{busOneStudent.section}</td>
+                  <td>{busOneStudent.parentName}</td>
+                  <td>{busOneStudent.parentNumber}</td>
+                  <td>{busOneStudent.address}</td>
                 </tr>
+                )}
                 </tbody>
               </Table>
             </Card>
