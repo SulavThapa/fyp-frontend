@@ -3,6 +3,7 @@ import TestNav from "../NavBar/testNav";
 import MyVerticallyCenteredModal from "../Modal/Modal";
 import {Button, Card, Table} from "react-bootstrap";
 import axios from 'axios';
+import MyVerticallyCenteredModalEdit from "../Modal/EditModal";
 
 
 class BusInfo extends React.Component{
@@ -20,8 +21,8 @@ class BusInfo extends React.Component{
       }).catch(err => console.log('cannot access',err));
   }
 
-  handleDelete = () => {
-    const id = this.state.drivers._id;
+  handleDelete = id => {
+    //const id = this.state.drivers._id;
     axios.delete(`http://localhost:5000/drivers/${id}`)
       .then(res => {
         console.log(res);
@@ -51,7 +52,7 @@ class BusInfo extends React.Component{
                   <th>Permanent Address</th>
                   <th>Phone</th>
                   <th>Marital Status</th>
-                  {/*<th>Edit</th>*/}
+                  <th>Edit</th>
                   <th>Delete</th>
                 </tr>
                 </thead>
@@ -64,8 +65,8 @@ class BusInfo extends React.Component{
                     <td>{driver.permanentAddress}</td>
                     <td>{driver.phone}</td>
                     <td>{driver.maritalStatus}</td>
-                    {/*<td><Button className="btn-success">Edit</Button></td>*/}
-                    <td><Button variant="danger" type="reset" onClick={this.handleDelete}>Delete</Button></td>
+                    <td><MyVerticallyCenteredModalEdit/></td>
+                    <td><Button variant="danger" type="submit" onClick={this.handleDelete}>Delete</Button></td>
                   </tr>)}
                 </tbody>
               </Table>

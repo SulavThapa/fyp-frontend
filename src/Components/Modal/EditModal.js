@@ -1,10 +1,8 @@
 import React from 'react';
 import { Modal, Button, ButtonToolbar } from 'react-bootstrap';
-import FormFunc from '../Form/Form';
-import TableDesign from '../Tables/Table';
+import EditForm from "../Form/EditForm";
 
-
-class MyVerticallyCenteredModal extends React.Component {
+class MyVerticallyCenteredModalEdit extends React.Component {
 
   render() {
     return (
@@ -24,11 +22,11 @@ function MyVerticallyCenteredModalFunction(props) {
       centered>
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter" style={{ color: 'black'}}>
-          Enter the Details
+          Update the Details
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <FormFunc />
+        <EditForm />
       </Modal.Body>
       <Modal.Footer>
         <Button variant="danger" onClick={props.onHide}>Close</Button>
@@ -42,7 +40,7 @@ function ModalMaker() {
 
   return (
     <ButtonToolbar>
-      <Button onClick={() => setModalShow(true)} variant="success">Add</Button>
+      <Button onClick={() => setModalShow(true)} variant="success">Edit</Button>
       <MyVerticallyCenteredModalFunction
         show={modalShow}
         onHide={() => setModalShow(false)}
@@ -51,4 +49,4 @@ function ModalMaker() {
   );
 }
 
-export default MyVerticallyCenteredModal;
+export default MyVerticallyCenteredModalEdit;
