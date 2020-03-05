@@ -20,6 +20,15 @@ class BusInfo extends React.Component{
       }).catch(err => console.log('cannot access',err));
   }
 
+  handleDelete = () => {
+    const id = this.state.drivers._id;
+    axios.delete(`http://localhost:5000/drivers/${id}`)
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
+  };
+
   render() {
     return(
         <React.Fragment>
@@ -43,7 +52,7 @@ class BusInfo extends React.Component{
                   <th>Phone</th>
                   <th>Marital Status</th>
                   {/*<th>Edit</th>*/}
-                  {/*<th>Delete</th>*/}
+                  <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -56,7 +65,7 @@ class BusInfo extends React.Component{
                     <td>{driver.phone}</td>
                     <td>{driver.maritalStatus}</td>
                     {/*<td><Button className="btn-success">Edit</Button></td>*/}
-                    {/*<td><Button className="btn-danger">Delete</Button></td>*/}
+                    <td><Button variant="danger" type="reset" onClick={this.handleDelete}>Delete</Button></td>
                   </tr>)}
                 </tbody>
               </Table>
