@@ -8,7 +8,7 @@ class EditForm extends React.Component{
       <Form onSubmit={this.handleSubmit}>
         <Row>
           <Col>
-            <Form.Control placeholder="Id" type="text" name="id" onChange={this.handleChange}/>
+            <Form.Control placeholder="Id" type="text" name="id" defaultValue={this.props.id} onChange={this.handleChange}/>
           </Col>
           <Col>
             <Form.Control placeholder="Full name" type="text" name="fullName" onChange={this.handleChange}/>

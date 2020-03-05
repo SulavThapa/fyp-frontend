@@ -21,9 +21,10 @@ class BusInfo extends React.Component{
       }).catch(err => console.log('cannot access',err));
   }
 
-  handleDelete = id => {
+  handleDelete = () => {
     //const id = this.state.drivers._id;
-    axios.delete(`http://localhost:5000/drivers/${id}`)
+    // const { id } = this.props.match.params;
+    axios.delete(`http://localhost:5000/drivers/${this.state.drivers.id}`)
       .then(res => {
         console.log(res);
         console.log(res.data);

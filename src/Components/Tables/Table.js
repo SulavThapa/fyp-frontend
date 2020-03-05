@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import {Table, Button, Card, ButtonGroup} from 'react-bootstrap';
 import TestNav from "../NavBar/testNav";
-import MapHere from "../Map/map";
-import MyVerticallyCenteredModal from "../Modal/Modal";
 import axios from "axios";
 
 class TableDesign extends React.Component {
-
+  
   state = {
     busOneStudents: []
   };
