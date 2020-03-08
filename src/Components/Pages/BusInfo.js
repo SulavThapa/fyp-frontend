@@ -4,6 +4,8 @@ import MyVerticallyCenteredModal from "../Modal/Modal";
 import {Button, Card, Table} from "react-bootstrap";
 import axios from 'axios';
 import MyVerticallyCenteredModalEdit from "../Modal/EditModal";
+import {Link} from "react-router-dom";
+
 
 
 class BusInfo extends React.Component{
@@ -21,11 +23,10 @@ class BusInfo extends React.Component{
       }).catch(err => console.log('cannot access',err));
   }
 
-  handleDelete = () => {
-    //const id = this.state.drivers._id;
-    // const { id } = this.props.match.params;
-    axios.delete(`http://localhost:5000/drivers/${this.state.drivers.id}`)
+  handleDelete = _id => {
+    axios.delete(`http://localhost:5000/drivers/${_id}`)
       .then(res => {
+        window.location.reload(false);
         console.log(res);
         console.log(res.data);
       })
@@ -67,7 +68,12 @@ class BusInfo extends React.Component{
                     <td>{driver.phone}</td>
                     <td>{driver.maritalStatus}</td>
                     <td><MyVerticallyCenteredModalEdit/></td>
-                    <td><Button variant="danger" type="submit" onClick={this.handleDelete}>Delete</Button></td>
+                    <td><Button
+                      variant="danger"
+                      type="submit"
+                      onClick={this.handleDelete.bind(this, driver._id)}>
+                      Delete
+                    </Button></td>
                   </tr>)}
                 </tbody>
               </Table>

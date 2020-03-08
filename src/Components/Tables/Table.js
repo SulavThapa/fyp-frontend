@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Table, Button, Card, ButtonGroup} from 'react-bootstrap';
 import TestNav from "../NavBar/testNav";
 import axios from "axios";
+import MyVerticallyCenteredModalEdit from "../Modal/EditModal";
 
 class TableDesign extends React.Component {
   
@@ -17,6 +18,15 @@ class TableDesign extends React.Component {
         console.log(res);
       }).catch(err => console.log('cannot access',err));
   }
+
+  handleDelete = _id => {
+    axios.delete(`http://localhost:5000/busOneStudents/${_id}`)
+      .then(res => {
+        window.location.reload(false);
+        console.log(res);
+        console.log(res.data);
+      })
+  };
 
   render() {
     return (
@@ -39,6 +49,8 @@ class TableDesign extends React.Component {
                   <th>Parent Name</th>
                   <th>Parents Number</th>
                   <th>Address</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -51,6 +63,13 @@ class TableDesign extends React.Component {
                   <td>{busOneStudent.parentName}</td>
                   <td>{busOneStudent.parentNumber}</td>
                   <td>{busOneStudent.address}</td>
+                  <td><MyVerticallyCenteredModalEdit/></td>
+                  <td><Button
+                    variant="danger"
+                    type="submit"
+                    onClick={this.handleDelete.bind(this, busOneStudent._id)}>
+                    Delete
+                  </Button></td>
                 </tr>
                 )}
                 </tbody>
