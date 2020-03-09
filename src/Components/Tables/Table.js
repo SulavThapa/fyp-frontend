@@ -76,7 +76,7 @@ class TableDesign extends React.Component {
                         _id: busOneStudent._id,
                         id: busOneStudent.id,
                         studentName: busOneStudent.studentName,
-                        class: busOneStudent.class,
+                        grade: busOneStudent.class,
                         section: busOneStudent.section,
                         parentName: busOneStudent.parentName,
                         parentNumber: busOneStudent.parentNumber,
@@ -90,7 +90,7 @@ class TableDesign extends React.Component {
                       _id = {_id}
                       id = {id}
                       studentName = {studentName}
-                      class = {grade}
+                      grade = {grade}
                       section = {section}
                       parentName = {parentName}
                       parentNumber = {parentNumber}

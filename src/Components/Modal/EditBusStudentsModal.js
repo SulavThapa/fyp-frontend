@@ -60,6 +60,7 @@ class EditBusStudentsModal extends React.Component{
             <Form onSubmit={this.handleSubmit}>
               <Row>
                 <Col>
+                  <Form.Label>Id</Form.Label>
                   <Form.Control
                     placeholder="Id"
                     type="text"
@@ -69,6 +70,7 @@ class EditBusStudentsModal extends React.Component{
                     onChange={this.handleChange}/>
                 </Col>
                 <Col>
+                  <Form.Label>Full Name</Form.Label>
                   <Form.Control
                     placeholder="Full name"
                     type="text"
@@ -81,16 +83,18 @@ class EditBusStudentsModal extends React.Component{
               <br/>
               <Row>
                 <Col>
+                  <Form.Label>Grade</Form.Label>
                   <Form.Control
-                    placeholder="Temporary Address"
+                    placeholder="class"
                     type="text"
-                    defaultValue={this.props.class}
+                    defaultValue={this.props.grade}
                     name="class"
                     onChange={this.handleChange}/>
                 </Col>
                 <Col>
+                  <Form.Label>Section</Form.Label>
                   <Form.Control
-                    placeholder="Permanent Address"
+                    placeholder="Section"
                     type="text"
                     name="section"
                     defaultValue={this.props.section}
@@ -100,23 +104,26 @@ class EditBusStudentsModal extends React.Component{
               <br/>
               <Row>
                 <Col>
+                  <Form.Label>Parent Name</Form.Label>
                   <Form.Control
-                    placeholder="Phone"
+                    placeholder="Parent Name"
                     type="text"
                     defaultValue={this.props.parentName}
                     name="parentName"
                     onChange={this.handleChange}/>
                 </Col>
                 <Col>
+                  <Form.Label>Parent Number</Form.Label>
                   <Form.Control
-                    placeholder="Marital Status"
+                    placeholder="Parent Number"
                     type="text"
                     defaultValue={this.props.parentNumber}
                     name="parentNumber"
                     onChange={this.handleChange}/>
                 </Col><Col>
-                  <Form.Control
-                    placeholder="Marital Status"
+                <Form.Label style={{left: '1%'}}>Address</Form.Label>
+                <Form.Control
+                    placeholder="Address"
                     type="text"
                     defaultValue={this.props.address}
                     name="address"
