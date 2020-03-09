@@ -3,11 +3,14 @@ import {Table, Button, Card, ButtonGroup} from 'react-bootstrap';
 import TestNav from "../NavBar/testNav";
 import axios from "axios";
 import MyVerticallyCenteredModalEdit from "../Modal/EditModal";
+import EditBusStudentsModal from "../Modal/EditBusStudentsModal";
+import EditDriverModal from "../Modal/EditDriverModal";
 
 class TableDesign extends React.Component {
   
   state = {
-    busOneStudents: []
+    busOneStudents: [],
+    addModalShow: false
   };
 
   componentDidMount()
@@ -29,6 +32,8 @@ class TableDesign extends React.Component {
   };
 
   render() {
+    const {busOneStudents, _id, id, studentName, grade, section, parentName, parentNumber, address} = this.state;
+    let addModalClose = () => this.setState({addModalShow : false});
     return (
         <React.Fragment>
           <TestNav/>
@@ -63,7 +68,35 @@ class TableDesign extends React.Component {
                   <td>{busOneStudent.parentName}</td>
                   <td>{busOneStudent.parentNumber}</td>
                   <td>{busOneStudent.address}</td>
-                  <td><MyVerticallyCenteredModalEdit/></td>
+                  <td>
+                    <Button
+                      variant="success"
+                      onClick={() => this.setState({
+                        addModalShow: true,
+                        _id: busOneStudent._id,
+                        id: busOneStudent.id,
+                        studentName: busOneStudent.studentName,
+                        class: busOneStudent.class,
+                        section: busOneStudent.section,
+                        parentName: busOneStudent.parentName,
+                        parentNumber: busOneStudent.parentNumber,
+                        address: busOneStudent.address
+                      })}
+                    >Edit
+                    </Button>
+                    <EditBusStudentsModal
+                      show = {this.state.addModalShow}
+                      onHide = {addModalClose}
+                      _id = {_id}
+                      id = {id}
+                      studentName = {studentName}
+                      class = {grade}
+                      section = {section}
+                      parentName = {parentName}
+                      parentNumber = {parentNumber}
+                      address = {address}
+                    />
+                  </td>
                   <td><Button
                     variant="danger"
                     type="submit"

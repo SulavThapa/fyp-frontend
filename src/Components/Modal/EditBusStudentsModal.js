@@ -2,18 +2,19 @@ import React from 'react';
 import {Modal, Button,  Form, Row, Col} from 'react-bootstrap';
 import axios from "axios";
 
-class EditDriverModal extends React.Component{
+class EditBusStudentsModal extends React.Component{
   constructor() {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   state: {
     id: '',
-    fullName: '',
-    temporaryAddress: '',
-    permanentAddress: '',
-    phone: '',
-    maritalStatus:''
+    studentName: '',
+    class: '',
+    section: '',
+    parentName: '',
+    parentNumber: '',
+    address: ''
   };
 
   handleChange = e => {
@@ -24,12 +25,7 @@ class EditDriverModal extends React.Component{
     e.preventDefault();
     axios.put(`http://localhost:5000/drivers/${this.props._id}`,
       {
-        id: `${this.props.id}`,
-        fullName: `${this.props.fullName}`,
-        temporaryAddress: `${this.state.temporaryAddress}`,
-        permanentAddress: `${this.state.permanentAddress}`,
-        phone: `${this.state.phone}`,
-        maritalStatus:`${this.state.maritalStatus}`
+
       } ,
       {
         headers: {
@@ -77,8 +73,8 @@ class EditDriverModal extends React.Component{
                     placeholder="Full name"
                     type="text"
                     disabled
-                    defaultValue={this.props.fullName}
-                    name="fullName"
+                    defaultValue={this.props.studentName}
+                    name="studentName"
                     onChange={this.handleChange}/>
                 </Col>
               </Row>
@@ -88,16 +84,16 @@ class EditDriverModal extends React.Component{
                   <Form.Control
                     placeholder="Temporary Address"
                     type="text"
-                    defaultValue={this.props.temporaryAddress}
-                    name="temporaryAddress"
+                    defaultValue={this.props.class}
+                    name="class"
                     onChange={this.handleChange}/>
                 </Col>
                 <Col>
                   <Form.Control
                     placeholder="Permanent Address"
                     type="text"
-                    name="permanentAddress"
-                    defaultValue={this.props.permanentAddress}
+                    name="section"
+                    defaultValue={this.props.section}
                     onChange={this.handleChange}/>
                 </Col>
               </Row>
@@ -107,16 +103,23 @@ class EditDriverModal extends React.Component{
                   <Form.Control
                     placeholder="Phone"
                     type="text"
-                    defaultValue={this.props.phone}
-                    name="phone"
+                    defaultValue={this.props.parentName}
+                    name="parentName"
                     onChange={this.handleChange}/>
                 </Col>
                 <Col>
                   <Form.Control
                     placeholder="Marital Status"
                     type="text"
-                    defaultValue={this.props.maritalStatus}
-                    name="maritalStatus"
+                    defaultValue={this.props.parentNumber}
+                    name="parentNumber"
+                    onChange={this.handleChange}/>
+                </Col><Col>
+                  <Form.Control
+                    placeholder="Marital Status"
+                    type="text"
+                    defaultValue={this.props.address}
+                    name="address"
                     onChange={this.handleChange}/>
                 </Col>
               </Row>
@@ -137,4 +140,4 @@ class EditDriverModal extends React.Component{
   }
 }
 
-export default EditDriverModal;
+export default EditBusStudentsModal;
