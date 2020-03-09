@@ -31,8 +31,9 @@ class FormFunc extends React.Component {
       } ,
       {
       headers: {
+        'Accept': 'application/json',
         'Content-Type': 'application/json; charset=UTF-8'
-      }
+      },
     })
       .then( res => {
         console.log(res);

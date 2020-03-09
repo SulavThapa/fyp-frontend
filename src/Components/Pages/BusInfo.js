@@ -5,13 +5,15 @@ import {Button, Card, Table} from "react-bootstrap";
 import axios from 'axios';
 import MyVerticallyCenteredModalEdit from "../Modal/EditModal";
 import {Link} from "react-router-dom";
+import EditDriverModal from "../Modal/EditDriverModal";
 
 
 
 class BusInfo extends React.Component{
 
   state = {
-    drivers: []
+    drivers: [],
+    addModalShow: false
   };
 
   componentDidMount()
@@ -33,6 +35,8 @@ class BusInfo extends React.Component{
   };
 
   render() {
+    const {drivers, _id, id, fullName, temporaryAddress, permanentAddress, phone, maritalStatus} = this.state;
+    let addModalClose = () => this.setState({addModalShow : false});
     return(
         <React.Fragment>
           <TestNav />
@@ -67,7 +71,32 @@ class BusInfo extends React.Component{
                     <td>{driver.permanentAddress}</td>
                     <td>{driver.phone}</td>
                     <td>{driver.maritalStatus}</td>
-                    <td><MyVerticallyCenteredModalEdit/></td>
+                    <td><Button
+                      variant="success"
+                      onClick={() => this.setState({
+                        addModalShow: true,
+                        _id: driver._id,
+                        id: driver.id,
+                        fullName: driver.fullName,
+                        temporaryAddress: driver.temporaryAddress,
+                        permanentAddress: driver.permanentAddress,
+                        phone: driver.phone,
+                        maritalStatus: driver.maritalStatus
+                      })}
+                    >Edit
+                    </Button>
+                      <EditDriverModal
+                        show = {this.state.addModalShow}
+                        onHide = {addModalClose}
+                        _id = {_id}
+                        id = {id}
+                        fullName = {fullName}
+                        temporaryAddress = {temporaryAddress}
+                        permanentAddress = {permanentAddress}
+                        phone = {phone}
+                        maritalStatus = {maritalStatus}
+                      />
+                    </td>
                     <td><Button
                       variant="danger"
                       type="submit"
