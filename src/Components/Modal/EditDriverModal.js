@@ -24,18 +24,12 @@ class EditDriverModal extends React.Component{
     // e.preventDefault();
     axios.put(`http://localhost:5000/drivers/${this.props._id}`,
       {
-        // id: `${this.state.id}`|| `${this.props.id}`,
         id: `${this.state.id}` === "undefined" ? `${this.props.id}` : `${this.state.id}`,
         fullName: `${this.state.fullName}` === "undefined" ? `${this.props.fullName}` : `${this.state.fullName}`,
         temporaryAddress: `${this.state.temporaryAddress}` === "undefined" ? `${this.props.temporaryAddress}` : `${this.state.temporaryAddress}`,
         permanentAddress: `${this.state.permanentAddress}` === "undefined" ? `${this.props.permanentAddress}` : `${this.state.permanentAddress}`,
         phone: `${this.state.phone}` === "undefined" ? `${this.props.phone}` : `${this.state.phone}`,
         maritalStatus: `${this.state.maritalStatus}` === "undefined" ? `${this.props.maritalStatus}` : `${this.state.maritalStatus}`,
-        // fullName: `${this.state.fullName}`,
-        // temporaryAddress: `${this.state.temporaryAddress}`,
-        // permanentAddress: `${this.state.permanentAddress}`,
-        // phone: `${this.state.phone}`,
-        // maritalStatus:`${this.state.maritalStatus}`
       } ,
       {
         headers: {

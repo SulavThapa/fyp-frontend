@@ -58,7 +58,7 @@ class TestNav extends React.Component {
                     <Link to="/register">
                       <a className="nav-link">
                         <FontAwesomeIcon className="side" icon="unlock" style={{color: '#357d7b'}}/>
-                        Register
+                        LogOut
                       </a>
                     </Link>
                   </li>
