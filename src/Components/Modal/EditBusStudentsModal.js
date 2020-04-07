@@ -22,10 +22,16 @@ class EditBusStudentsModal extends React.Component{
   };
 
   handleSubmit(e){
-    e.preventDefault();
-    axios.put(`http://localhost:5000/drivers/${this.props._id}`,
+    console.log(this.props._id);
+    axios.put(`http://localhost:5000/busOneStudents/${this.props._id}`,
       {
-
+        id: `${this.state.id}` === "undefined" ? `${this.props.id}` : `${this.state.id}`,
+        studentName: `${this.state.studentName}` === "undefined" ? `${this.props.studentName}` : `${this.state.studentName}`,
+        class: `${this.state.class}` === "undefined" ? `${this.props.grade}` : `${this.state.class}`,
+        section: `${this.state.section}` === "undefined" ? `${this.props.section}` : `${this.state.section}`,
+        parentName: `${this.state.parentName}` === "undefined" ? `${this.props.parentName}` : `${this.state.parentName}`,
+        parentNumber: `${this.state.parentNumber}` === "undefined" ? `${this.props.parentNumber}` : `${this.state.parentNumber}`,
+        address: `${this.state.address}` === "undefined" ? `${this.props.address}` : `${this.state.address}`
       } ,
       {
         headers: {
@@ -120,7 +126,8 @@ class EditBusStudentsModal extends React.Component{
                     defaultValue={this.props.parentNumber}
                     name="parentNumber"
                     onChange={this.handleChange}/>
-                </Col><Col>
+                </Col>
+                <Col>
                 <Form.Label style={{left: '1%'}}>Address</Form.Label>
                 <Form.Control
                     placeholder="Address"

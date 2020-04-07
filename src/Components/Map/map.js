@@ -47,7 +47,7 @@ class LiveMap extends React.Component{
   };
   componentDidMount()
   {
-    axios.get(`http://localhost:5000/gpsinfo/latitude/longitude`)
+    axios.get(`https://api.thingspeak.com/channels/1021842/feeds.json?api_key=LIN8G7PKND7MMP6E&results=15`)
       .then(res => {
         this.setState({gps: res.data});
         console.log(res);
@@ -58,7 +58,7 @@ class LiveMap extends React.Component{
       <React.Fragment>
         <div
           className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h2>Maps</h2>
+          <h2 style={{fontFamily: 'monospace', fontSize: '35px'}}>Maps</h2>
         </div>
         <Card className="vh-100" style={{backgroundColor: '#999'}}>
           <SimpleMap/>

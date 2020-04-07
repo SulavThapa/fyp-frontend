@@ -43,7 +43,7 @@ class TableDesign extends React.Component {
               <h2 style={{left: '3%', marginTop: '1%'}}>Bus One Student Details</h2>
             </div>
 
-            <Card style={{height: '100%', width: '100%', marginTop: '1%', padding: '2%'}}>
+            <Card className="shadow-sm" style={{height: '100%', width: '100%', marginTop: '1%', padding: '2%'}}>
               <Table striped bordered hover size="sm" id="dtVerticalScrollExample" cellspacing="0">
                 <thead className="thead-dark">
                 <tr style={{height: '35px'}}>

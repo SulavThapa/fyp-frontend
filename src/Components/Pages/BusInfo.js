@@ -23,7 +23,7 @@ class BusInfo extends React.Component{
         this.setState({drivers: res.data});
         console.log(res);
       }).catch(err => console.log('cannot access',err));
-  }
+  }  
 
   handleDelete = _id => {
     axios.delete(`http://localhost:5000/drivers/${_id}`)
@@ -48,7 +48,7 @@ class BusInfo extends React.Component{
               <MyVerticallyCenteredModal/>
             </div>
 
-            <Card className="h-75 d-inline-block" style={{height: '100%', width: '100%', marginTop: '1%', padding: '2%'}}>
+            <Card className="h-75 d-inline-block shadow-sm" style={{height: '100%', width: '100%', marginTop: '1%', padding: '2%'}}>
               <Table striped bordered hover size="sm">
                 <thead className="thead-dark">
                 <tr style={{height: '40px'}}>

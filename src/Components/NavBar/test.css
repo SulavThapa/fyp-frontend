@@ -113,10 +113,17 @@ a:link{
 }
 
 a:hover{
-  color: #4a5157;
+  color: #e1f5f3;
+  font-size: 17px;
+}
+
+a:active{
+  color: #f7fcff;
+  font-size: 17px;
 }
 
 a{
-  color: #000000;
+  color: #d8d8e2;
   font-size: 15px;
+  font-family: Monospaced;
 }
