@@ -20,10 +20,17 @@ class TestNav extends React.Component {
       <React.Fragment>
 
         <nav className="navbar navbar-dark fixed-top bg-secondary flex-md-nowrap p-0 shadow" style={{backgroundColor: "rgba(92,113,116,0.57)"}}>
-          <Link to="/">
+          <Link to="/admin">
             <a className="navbar-brand col-sm-3 col-md-2 mr-0">
               <span style={{fontFamily: 'sans-serif', color: 'white'}}>SECURE</span></a>
           </Link>
+          <ul class="navbar-nav px-3">
+            <Link to="/">
+              <li class="nav-item text-nowrap">
+                <a class="nav-link">Sign out</a>
+              </li>
+            </Link>
+          </ul>
         </nav>
 
         <div className="container-fluid">
@@ -52,14 +59,6 @@ class TestNav extends React.Component {
                       <a className="nav-link">
                         <FontAwesomeIcon className="side" icon="bus" style={{color: '#ff4646'}}/>
                         Bus Info
-                      </a>
-                    </Link>
-                  </li>
-                  <li className="nav-item" >
-                    <Link to="/">
-                      <a className="nav-link">
-                        <FontAwesomeIcon className="side" icon="unlock" style={{color: '#33c563'}}/>
-                        LogOut
                       </a>
                     </Link>
                   </li>

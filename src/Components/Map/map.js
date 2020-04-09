@@ -5,13 +5,13 @@ import {Card} from "react-bootstrap";
 import axios from "axios";
 
 
-const SimpleMap = (props: any) => {
+const SimpleMap = () => {
 
 
 
 
 
-  const getMapOptions = (maps: any) => {
+  const getMapOptions = () => {
     return {
       disableDefaultUI: true,
       mapTypeControl: true,
@@ -23,7 +23,7 @@ const SimpleMap = (props: any) => {
   const [center, setCenter] = useState({lat:27.708816 , lng: 85.3254351 });
   const [zoom, setZoom] = useState(16);
   return (
-    <div style={{ height: '100vh', width: '100%' }}>
+    <div style={{ height: '85vh', width: '100%' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: 'AIzaSyAEeG9ixt_VVl-uEdh3GvSgpPEmX0mrVvc' }}
         defaultCenter={center}
@@ -60,7 +60,7 @@ class LiveMap extends React.Component{
           className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
           <h2 style={{fontFamily: 'monospace', fontSize: '35px'}}>Maps</h2>
         </div>
-        <Card className="vh-100" style={{backgroundColor: '#999'}}>
+        <Card className="100%" style={{backgroundColor: '#999'}}>
           <SimpleMap/>
         </Card>
       </React.Fragment>
