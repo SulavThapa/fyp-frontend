@@ -5,6 +5,9 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faHome, faTable, faUnlock, faBus, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 import {Link} from "react-router-dom";
 import bus from "../Image/bus.png";
+import {Button} from 'react-bootstrap';
+import ConfirmModal from "../Modal/ConfirmModal";
+
 
 library.add(faHome, faTable, faUnlock, faBus,faMapMarkedAlt);
 
@@ -15,7 +18,12 @@ const testAlert = (
 );
 
 class TestNav extends React.Component {
+  state = {
+    addModalShow: false
+  }
   render() {
+    let addModalClose = () => this.setState({addModalShow : false});
+
     return (
       <React.Fragment>
 
@@ -25,11 +33,16 @@ class TestNav extends React.Component {
               <span style={{fontFamily: 'sans-serif', color: 'white'}}>SECURE</span></a>
           </Link>
           <ul class="navbar-nav px-3">
-            <Link to="/">
               <li class="nav-item text-nowrap">
-                <a class="nav-link">Sign out</a>
+                <Button variant="secondary" onClick={() =>this.setState({
+                  addModalShow: true
+                })
+                }>Sign Out</Button>
+                <ConfirmModal
+                  show = {this.state.addModalShow}
+                  onHide = {addModalClose}
+                  />
               </li>
-            </Link>
           </ul>
         </nav>
 

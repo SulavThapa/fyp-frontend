@@ -10,7 +10,7 @@ class FormFunc extends React.Component {
     temporaryAddress: '',
     permanentAddress: '',
     phone: '',
-    maritalStatus:''
+    maritalStatus:'',
   };
 
   handleChange = e => {
