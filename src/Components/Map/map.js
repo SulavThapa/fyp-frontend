@@ -5,38 +5,7 @@ import {Card} from "react-bootstrap";
 import axios from "axios";
 
 
-const SimpleMap = () => {
-  const getMapOptions = () => {
-    return {
-      disableDefaultUI: true,
-      mapTypeControl: true,
-      streetViewControl: true,
-      styles: [{ featureType: 'poi', elementType: 'labels', stylers: [{ visibility: 'on' }] }],
-    };
-  };
-
-  const [center, setCenter] = useState({lat:27.708816 , lng: 85.3254351 });
-  const [zoom, setZoom] = useState(16);
-  return (
-    <div style={{ height: '85vh', width: '100%' }}>
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: 'AIzaSyAEeG9ixt_VVl-uEdh3GvSgpPEmX0mrVvc' }}
-        defaultCenter={center}
-        defaultZoom={zoom}
-        options={getMapOptions}
-      >
-        <Marker
-          lat={27.7088167}
-          lng={85.3254351}
-          name="Ba 1 cha 5486"
-          color="green"
-        />
-      </GoogleMapReact>
-    </div>
-  );
-}
-
-class LiveMap extends React.Component{
+class SimpleMap extends React.Component{
   state = {
     lat: '',
     lon: ''
@@ -54,6 +23,41 @@ class LiveMap extends React.Component{
         console.log(this.state.lon);
       }).catch(err => console.log('Cannot access', err));
   }
+
+  getMapOptions = () => {
+    return {
+      disableDefaultUI: true,
+      mapTypeControl: true,
+      streetViewControl: true,
+      styles: [{ featureType: 'poi', elementType: 'labels', stylers: [{ visibility: 'on' }] }],
+    };
+  };
+render(){
+  let lati = this.state.lat;
+  let longi = this.state.lon;
+  console.log(lati);
+  console.log(longi);
+  return (
+    <div style={{ height: '83vh', width: '100%' }}>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: 'AIzaSyAEeG9ixt_VVl-uEdh3GvSgpPEmX0mrVvc' }}
+        defaultCenter={{lat:6 , lng: 85.391891}}
+        defaultZoom={16}
+        options={this.getMapOptions}
+      >
+        <Marker
+          lat={lati}
+          lng={longi}
+          name="Ba 1 cha 5486"
+          color="green"
+        />
+      </GoogleMapReact>
+    </div>
+  );
+}
+}
+
+class LiveMap extends React.Component{
   render(){
     return(
       <React.Fragment>
