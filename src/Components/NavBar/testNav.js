@@ -51,7 +51,11 @@ class TestNav extends React.Component {
             <nav className="col-md-2 d-none d-md-block bg-dark sidebar shadow">
               <div className="sidebar-sticky" >
                 <ul className="nav flex-column">
-                  <li className="nav-item">
+                  <h6
+                    className="sidebar-heading d-flex justify-content-between align-items-center px-2 mb-1 text-muted">
+                    <span style={{fontFamily: 'monospace', fontSize: '15px'}}>Tracker</span>
+                  </h6>
+                  <li className="nav-item px-3">
                     <Link to="/admin">
                     <a className="nav-link" >
                       <FontAwesomeIcon className="side" icon="map-marked-alt" style={{color: '#ffc02d'}}/>
@@ -59,7 +63,11 @@ class TestNav extends React.Component {
                     </a>
                     </Link>
                   </li>
-                  <li className="nav-item">
+                  <h6
+                    className="sidebar-heading d-flex justify-content-between align-items-center px-2 mb-1 text-muted">
+                    <span style={{fontFamily: 'monospace', fontSize: '15px'}}>Student Details</span>
+                  </h6>
+                  <li className="nav-item px-3">
                     <Link to="/details">
                       <a className="nav-link">
                         <FontAwesomeIcon className="side" icon="table" style={{color: '#5b82ff'}}/>
@@ -67,7 +75,11 @@ class TestNav extends React.Component {
                       </a>
                     </Link>
                   </li>
-                  <li className="nav-item">
+                  <h6
+                    className="sidebar-heading d-flex justify-content-between align-items-center px-2 mb-1 text-muted">
+                    <span style={{fontFamily: 'monospace', fontSize: '15px'}}>Driver Details</span>
+                  </h6>
+                  <li className="nav-item px-3">
                     <Link to="/busDetails">
                       <a className="nav-link">
                         <FontAwesomeIcon className="side" icon="bus" style={{color: '#ff4646'}}/>
