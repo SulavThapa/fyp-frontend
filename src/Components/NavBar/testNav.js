@@ -53,7 +53,7 @@ class TestNav extends React.Component {
                 <ul className="nav flex-column">
                   <h6
                     className="sidebar-heading d-flex justify-content-between align-items-center px-2 mb-1 text-muted">
-                    <span style={{fontFamily: 'monospace', fontSize: '15px'}}>Tracker</span>
+                    <span style={{fontFamily: 'monospace', fontSize: '13px'}}>Tracker</span>
                   </h6>
                   <li className="nav-item px-3">
                     <Link to="/admin">
@@ -65,7 +65,7 @@ class TestNav extends React.Component {
                   </li>
                   <h6
                     className="sidebar-heading d-flex justify-content-between align-items-center px-2 mb-1 text-muted">
-                    <span style={{fontFamily: 'monospace', fontSize: '15px'}}>Student Details</span>
+                    <span style={{fontFamily: 'monospace', fontSize: '13px'}}>Student Details</span>
                   </h6>
                   <li className="nav-item px-3">
                     <Link to="/details">
@@ -77,7 +77,7 @@ class TestNav extends React.Component {
                   </li>
                   <h6
                     className="sidebar-heading d-flex justify-content-between align-items-center px-2 mb-1 text-muted">
-                    <span style={{fontFamily: 'monospace', fontSize: '15px'}}>Driver Details</span>
+                    <span style={{fontFamily: 'monospace', fontSize: '13px'}}>Driver Details</span>
                   </h6>
                   <li className="nav-item px-3">
                     <Link to="/busDetails">

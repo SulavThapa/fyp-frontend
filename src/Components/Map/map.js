@@ -6,11 +6,6 @@ import axios from "axios";
 
 
 const SimpleMap = () => {
-
-
-
-
-
   const getMapOptions = () => {
     return {
       disableDefaultUI: true,
@@ -43,14 +38,20 @@ const SimpleMap = () => {
 
 class LiveMap extends React.Component{
   state = {
-    gps: []
+    lat: '',
+    lon: ''
   };
   componentDidMount()
   {
-    axios.get(`https://api.thingspeak.com/channels/1021842/feeds.json?api_key=LIN8G7PKND7MMP6E&results=15`)
+    axios.get(`https://api.thingspeak.com/channels/1021842/feeds.json?api_key=LIN8G7PKND7MMP6E&results=1`)
       .then(res => {
-        this.setState({gps: res.data});
+        this.setState({
+          lat: res.data.feeds[0].field1,
+          lon: res.data.feeds[0].field2
+        });
         console.log(res);
+        console.log(this.state.lat);
+        console.log(this.state.lon);
       }).catch(err => console.log('Cannot access', err));
   }
   render(){
