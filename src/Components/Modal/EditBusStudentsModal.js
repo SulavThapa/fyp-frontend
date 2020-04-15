@@ -66,75 +66,103 @@ class EditBusStudentsModal extends React.Component{
             <Form onSubmit={this.handleSubmit}>
               <Row>
                 <Col>
-                  <Form.Label>Id</Form.Label>
-                  <Form.Control
+                  <div className="form-group">
+                    <label>Id</label>
+                    <input
+                    className="form-control"
                     placeholder="Id"
                     type="text"
                     name="id"
                     disabled
                     defaultValue={this.props.id}
-                    onChange={this.handleChange}/>
+                    onChange={this.handleChange}>
+                    </input>
+                  </div>
                 </Col>
                 <Col>
-                  <Form.Label>Full Name</Form.Label>
-                  <Form.Control
-                    placeholder="Full name"
-                    type="text"
-                    disabled
-                    defaultValue={this.props.studentName}
-                    name="studentName"
-                    onChange={this.handleChange}/>
-                </Col>
-              </Row>
-              <br/>
-              <Row>
-                <Col>
-                  <Form.Label>Grade</Form.Label>
-                  <Form.Control
-                    placeholder="class"
-                    type="text"
-                    defaultValue={this.props.grade}
-                    name="class"
-                    onChange={this.handleChange}/>
-                </Col>
-                <Col>
-                  <Form.Label>Section</Form.Label>
-                  <Form.Control
-                    placeholder="Section"
-                    type="text"
-                    name="section"
-                    defaultValue={this.props.section}
-                    onChange={this.handleChange}/>
+                  <div className="form-group">
+                    <label>Full Name</label>
+                    <input
+                      className="form-control"
+                      placeholder="Full name"
+                      type="text"
+                      disabled
+                      defaultValue={this.props.studentName}
+                      name="studentName"
+                      onChange={this.handleChange}>
+                    </input>
+                  </div>
                 </Col>
               </Row>
               <br/>
               <Row>
                 <Col>
-                  <Form.Label>Parent Name</Form.Label>
-                  <Form.Control
-                    placeholder="Parent Name"
-                    type="text"
-                    defaultValue={this.props.parentName}
-                    name="parentName"
-                    onChange={this.handleChange}/>
+                  <div className="form-group">
+                    <label>Grade</label>
+                    <input
+                      className="form-control"
+                      placeholder="class"
+                      type="text"
+                      defaultValue={this.props.grade}
+                      name="class"
+                      onChange={this.handleChange}>
+                    </input>
+                  </div>
                 </Col>
                 <Col>
-                  <Form.Label>Parent Number</Form.Label>
-                  <Form.Control
-                    placeholder="Parent Number"
-                    type="text"
-                    defaultValue={this.props.parentNumber}
-                    name="parentNumber"
-                    onChange={this.handleChange}/>
+                  <div className="form-group">
+                    <label>Section</label>
+                    <input
+                      className="form-control"
+                      placeholder="Section"
+                      type="text"
+                      name="section"
+                      defaultValue={this.props.section}
+                      onChange={this.handleChange}>
+                    </input>
+                  </div>
+                </Col>
+              </Row>
+              <br/>
+              <Row>
+                <Col>
+                  <div className="form-group">
+                    <label>Parent Name</label>
+                    <input
+                      className="form-control"
+                      placeholder="Parent Name"
+                      type="text"
+                      defaultValue={this.props.parentName}
+                      name="parentName"
+                      onChange={this.handleChange}>
+                    </input>
+                  </div>
                 </Col>
                 <Col>
-                <Form.Label style={{left: '1%'}}>Address</Form.Label>
-                <Form.Control
-                    placeholder="Address"
-                    type="text"
-                    defaultValue={this.props.address}
-                    name="address"
-                    onChange={this.handleChange}/>
+                  <div className="form-group">
+                    <label>Parent Number</label>
+                    <input
+                      className="form-control"
+                      placeholder="Parent Number"
+                      type="text"
+                      defaultValue={this.props.parentNumber}
+                      name="parentNumber"
+                      onChange={this.handleChange}>
+                    </input>
+                  </div>
+                </Col>
+                <Col>
+                  <div className="form-group">
+                    <label>Address</label>
+                    <input
+                      className="form-control"
+                      placeholder="Address"
+                      type="text"
+                      defaultValue={this.props.address}
+                      name="address"
+                      onChange={this.handleChange}>
+                    </input>
+                  </div>
                 </Col>
               </Row>
               <br/>

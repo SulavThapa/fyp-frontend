@@ -64,73 +64,97 @@ class EditDriverModal extends React.Component{
             <Form onSubmit={this.handleSubmit}>
               <Row>
                 <Col>
-                  <Form.Label>Id</Form.Label>
-                  <Form.Control
-                    placeholder="Id"
-                    type="text"
-                    name="id"
-                    disabled
-                    defaultValue={this.props.id}
-                    onChange={this.handleChange}/>
+                  <div className="form-group">
+                    <label>Id</label>
+                    <input
+                      className="form-control"
+                      placeholder="Id"
+                      type="text"
+                      disabled
+                      defaultValue={this.props.id}
+                      name="id"
+                      onChange={this.handleChange}>
+                    </input>
+                  </div>
                 </Col>
                 <Col>
-                  <Form.Label>Full Name</Form.Label>
-                  <Form.Control
-                    placeholder="Full name"
-                    type="text"
-                    disabled
-                    defaultValue={this.props.fullName}
-                    name="fullName"
-                    onChange={this.handleChange}/>
-                </Col>
-              </Row>
-              <br/>
-              <Row>
-                <Col>
-                  <Form.Label>Temporaray Address</Form.Label>
-                  <Form.Control
-                    placeholder="Temporary Address"
-                    type="text"
-                    defaultValue={this.props.temporaryAddress}
-                    name="temporaryAddress"
-                    onChange={this.handleChange}/>
-                </Col>
-                <Col>
-                  <Form.Label>Permanent Address</Form.Label>
-                  <Form.Control
-                    placeholder="Permanent Address"
-                    type="text"
-                    name="permanentAddress"
-                    defaultValue={this.props.permanentAddress}
-                    onChange={this.handleChange}/>
+                  <div className="form-group">
+                    <label>Full Name</label>
+                    <input
+                      className="form-control"
+                      placeholder="Full name"
+                      type="text"
+                      disabled
+                      defaultValue={this.props.fullName}
+                      name="fullName"
+                      onChange={this.handleChange}>
+                    </input>
+                  </div>
                 </Col>
               </Row>
               <br/>
               <Row>
                 <Col>
-                  <Form.Label>Contact Number</Form.Label>
-                  <Form.Control
-                    placeholder="Phone"
-                    type="text"
-                    defaultValue={this.props.phone}
-                    name="phone"
-                    onChange={this.handleChange}/>
+                  <div className="form-group">
+                    <label>Temporary Address</label>
+                    <input
+                      className="form-control"
+                      placeholder="Temporary Address"
+                      type="text"
+                      defaultValue={this.props.temporaryAddress}
+                      name="temporaryAddress"
+                      onChange={this.handleChange}>
+                    </input>
+                  </div>
                 </Col>
                 <Col>
-                  <Form.Label>Marital Status</Form.Label>
-                  <Form.Control
-                    placeholder="Marital Status"
-                    type="text"
-                    defaultValue={this.props.maritalStatus}
-                    name="maritalStatus"
-                    onChange={this.handleChange}/>
+                  <div className="form-group">
+                    <label>Permanent Address</label>
+                    <input
+                      className="form-control"
+                      placeholder="Permanent Address"
+                      type="text"
+                      defaultValue={this.props.permanentAddress}
+                      name="permanentAddress"
+                      onChange={this.handleChange}>
+                    </input>
+                  </div>
+                </Col>
+              </Row>
+              <br/>
+              <Row>
+                <Col>
+                  <div className="form-group">
+                    <label>Phone Number</label>
+                    <input
+                      className="form-control"
+                      placeholder="Phone"
+                      type="text"
+                      defaultValue={this.props.phone}
+                      name="phone"
+                      onChange={this.handleChange}>
+                    </input>
+                  </div>
+                </Col>
+                <Col>
+                  <div className="form-group">
+                    <label>Marital Status</label>
+                    <input
+                      className="form-control"
+                      placeholder="Marital Status"
+                      type="text"
+                      defaultValue={this.props.maritalStatus}
+                      name="maritalStatus"
+                      onChange={this.handleChange}>
+                    </input>
+                  </div>
                 </Col>
               </Row>
               <br/>
               <Button
                 variant="primary"
                 type="submit">
-                Update
+                Submit
               </Button>
             </Form>
           </div>
