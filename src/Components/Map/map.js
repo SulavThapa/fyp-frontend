@@ -41,7 +41,7 @@ render(){
     <div style={{ height: '83vh', width: '100%' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: 'AIzaSyAEeG9ixt_VVl-uEdh3GvSgpPEmX0mrVvc' }}
-        defaultCenter={{lat:6 , lng: 85.391891}}
+        defaultCenter={{lat:27.645699 , lng: 85.391891}}
         defaultZoom={16}
         options={this.getMapOptions}
       >
@@ -63,7 +63,7 @@ class LiveMap extends React.Component{
       <React.Fragment>
         <div
           className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h2 style={{fontFamily: 'monospace', fontSize: '35px'}}>Maps</h2>
+          <h2 className="text-muted" style={{fontFamily: 'monospace', fontSize: '35px'}}>Maps</h2>
         </div>
         <Card className="100%" style={{backgroundColor: '#999'}}>
           <SimpleMap/>

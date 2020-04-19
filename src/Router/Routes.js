@@ -5,6 +5,8 @@ import NewAdmin from '../Components/Pages/Admin';
 import Error from '../Components/Pages/ErrorPage';
 import TableDesign from "../Components/Tables/Table";
 import BusInfo from "../Components/Pages/BusInfo";
+import BusHistory from "../Components/Pages/History";
+
 
 class RoutePage extends React.Component {
   render() {
@@ -16,6 +18,7 @@ class RoutePage extends React.Component {
             <Route path="/admin" component={NewAdmin} />
             <Route path="/details" component={TableDesign} />
             <Route path="/busDetails" component={BusInfo} />
+            <Route path="/busHistory" component={BusHistory} />
             <Route component={Error} />
           </Switch>
         </div>

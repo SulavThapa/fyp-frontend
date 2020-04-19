@@ -7,7 +7,7 @@ class EditBusStudentsModal extends React.Component{
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  state: {
+  state = {
     id: '',
     studentName: '',
     class: '',
@@ -22,30 +22,34 @@ class EditBusStudentsModal extends React.Component{
   };
 
   handleSubmit(e){
-    console.log(this.props._id);
-    axios.put(`http://localhost:5000/busOneStudents/${this.props._id}`,
-      {
-        id: `${this.state.id}` === "undefined" ? `${this.props.id}` : `${this.state.id}`,
-        studentName: `${this.state.studentName}` === "undefined" ? `${this.props.studentName}` : `${this.state.studentName}`,
-        class: `${this.state.class}` === "undefined" ? `${this.props.grade}` : `${this.state.class}`,
-        section: `${this.state.section}` === "undefined" ? `${this.props.section}` : `${this.state.section}`,
-        parentName: `${this.state.parentName}` === "undefined" ? `${this.props.parentName}` : `${this.state.parentName}`,
-        parentNumber: `${this.state.parentNumber}` === "undefined" ? `${this.props.parentNumber}` : `${this.state.parentNumber}`,
-        address: `${this.state.address}` === "undefined" ? `${this.props.address}` : `${this.state.address}`
-      } ,
-      {
-        headers: {
-          //'Accept' : 'application/json',
-          'Content-Type': 'application/json; charset=UTF-8'
-        }
-      })
-      .then( res => {
-        console.log(res);
-        console.log(res.data);
-      })
-      .catch(err => {
-        console.log(`This is the ${err} error.`)
-      })
+    if( !Number(this.state.phone)){
+      e.preventDefault();
+      alert('Must be number')
+    }else{
+      axios.put(`http://localhost:5000/busOneStudents/${this.props._id}`,
+          {
+            id: `${this.state.id}` === "" ? `${this.props.id}` : `${this.state.id}`,
+            studentName: `${this.state.studentName}` === "" ? `${this.props.studentName}` : `${this.state.studentName}`,
+            class: `${this.state.class}` === "" ? `${this.props.grade}` : `${this.state.class}`,
+            section: `${this.state.section}` === "" ? `${this.props.section}` : `${this.state.section}`,
+            parentName: `${this.state.parentName}` === "" ? `${this.props.parentName}` : `${this.state.parentName}`,
+            parentNumber: `${this.state.parentNumber}` === "" ? `${this.props.parentNumber}` : `${this.state.parentNumber}`,
+            address: `${this.state.address}` === "" ? `${this.props.address}` : `${this.state.address}`
+          } ,
+          {
+            headers: {
+              //'Accept' : 'application/json',
+              'Content-Type': 'application/json; charset=UTF-8'
+            }
+          })
+          .then( res => {
+            console.log(res);
+            console.log(res.data);
+          })
+          .catch(err => {
+            console.log(`This is the ${err} error.`)
+          })
+    }
   };
 
   render(){

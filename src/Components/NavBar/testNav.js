@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import './test.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHome, faTable, faUnlock, faBus, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faTable, faUnlock, faBus, faMapMarkedAlt, faHistory } from '@fortawesome/free-solid-svg-icons';
 import {Link} from "react-router-dom";
 import bus from "../Image/bus.png";
 import {Button} from 'react-bootstrap';
 import ConfirmModal from "../Modal/ConfirmModal";
 
 
-library.add(faHome, faTable, faUnlock, faBus,faMapMarkedAlt);
+library.add(faHome, faTable, faUnlock, faBus,faMapMarkedAlt, faHistory);
 
 const testAlert = (
   <div className="alert alert-warning" role="alert">
@@ -84,6 +84,14 @@ class TestNav extends React.Component {
                       <a className="nav-link">
                         <FontAwesomeIcon className="side" icon="bus" style={{color: '#ff4646'}}/>
                         Bus Info
+                      </a>
+                    </Link>
+                  </li>
+                  <li className="nav-item px-3">
+                    <Link to="/busHistory">
+                      <a className="nav-link">
+                        <FontAwesomeIcon className="side" icon="history" style={{color: '#32e1ff'}}/>
+                        Bus History
                       </a>
                     </Link>
                   </li>

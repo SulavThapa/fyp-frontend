@@ -40,7 +40,7 @@ class TableDesign extends React.Component {
           <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
             <div
                 className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-              <h2 style={{left: '3%', marginTop: '1%'}}>Bus One Student Details</h2>
+              <h2 className="text-muted" style={{left: '3%', marginTop: '1%'}}>Bus One Student Details</h2>
             </div>
 
             <Card className="shadow-sm" style={{height: '100%', width: '100%', marginTop: '1%', padding: '2%'}}>

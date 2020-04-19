@@ -4,7 +4,7 @@ import axios from 'axios';
 
 class FormFunc extends React.Component {
 
-  state: {
+  state = {
     id: '',
     fullName: '',
     temporaryAddress: '',
@@ -18,32 +18,47 @@ class FormFunc extends React.Component {
   };
 
   handleSubmit = e => {
-    // e.preventDefault();
-    axios.post(`http://localhost:5000/drivers`,
-      {
-        id: `${this.state.id}`,
-        fullName: `${this.state.fullName}`,
-        temporaryAddress: `${this.state.temporaryAddress}`,
-        permanentAddress: `${this.state.permanentAddress}`,
-        phone: `${this.state.phone}`,
-        maritalStatus:`${this.state.maritalStatus}`
-      } ,
-      {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json; charset=UTF-8'
-      },
-    })
-      .then( res => {
-        console.log(res);
-        console.log(res.data);
-      })
-      .catch(err => {
-        console.log(`This is the ${err} error.`)
-      })
+    if(!Number(this.state.id) || !Number(this.state.phone)){
+      e.preventDefault();
+      alert('Must be number')
+    }
+    else{
+      axios.post(`http://localhost:5000/drivers`,
+          {
+            id: `${this.state.id}`,
+            fullName: `${this.state.fullName}`,
+            temporaryAddress: `${this.state.temporaryAddress}`,
+            permanentAddress: `${this.state.permanentAddress}`,
+            phone: `${this.state.phone}`,
+            maritalStatus:`${this.state.maritalStatus}`
+          } ,
+          {
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json; charset=UTF-8'
+            },
+          })
+          .then( res => {
+            console.log(res);
+            console.log(res.data);
+          })
+          .catch(err => {
+            console.log(`This is the ${err} error.`)
+          })
+    }
     };
+    canBeSubmitted (){
+      const {id, fullName, temporaryAddress, permanentAddress, phone, maritalStatus} = this.state;
+      return id.length == 3 &&
+          fullName.length >= 5 &&
+          temporaryAddress.length >= 5 &&
+          permanentAddress.length >= 5 &&
+          phone.length == 10 &&
+          maritalStatus.length >= 4;
+    }
 
   render() {
+      const isEnabled = this.canBeSubmitted();
     return (
       <div className="container">
         <Form onSubmit={this.handleSubmit}>
@@ -58,7 +73,10 @@ class FormFunc extends React.Component {
                   name="id"
                   onChange={this.handleChange}>
                 </input>
-              </div>
+                {this.state.id.length > 3 ? <span style={{color: 'red', fontFamily: 'monospace'}}>
+                  Id should not be more than three numbers.
+                </span>: ''}
+                </div>
             </Col>
             <Col>
               <div className="form-group">
@@ -112,6 +130,9 @@ class FormFunc extends React.Component {
                   name="phone"
                   onChange={this.handleChange}>
                 </input>
+                {this.state.phone.length > 10  ? <span style={{color: 'red', fontFamily: 'monospace'}}>
+                  Phone Number Must be of 10 digits.
+                </span>: ''}
               </div>
             </Col>
             <Col>
@@ -129,6 +150,7 @@ class FormFunc extends React.Component {
           </Row>
           <br/>
           <Button
+            disabled={!isEnabled}
             variant="primary"
             type="submit">
             Submit
