@@ -74,11 +74,11 @@ class Home extends Component {
                                error={errors.email}
                                id="email" 
                                onChange={this.handleChange}
-                               className={classnames("", {
+                               className={classnames("form-control", {
                                 invalid: errors.email || errors.emailnotfound
                               })}
                                />
-                                <span className="red-text">
+                                <span style={{color: 'red', opacity: '70%'}}>
                                     {errors.email}
                                     {errors.emailnotfound}
                                 </span>
@@ -92,11 +92,11 @@ class Home extends Component {
                                error={errors.password} 
                                id="password" 
                                onChange={this.handleChange}
-                               className={classnames("", {
+                               className={classnames("form-control", {
                                 invalid: errors.password || errors.passwordincorrect
                               })}
                                />
-                               <span className="red-text">
+                               <span style={{color: 'red', opacity: '70%'}}>
                                     {errors.password}
                                     {errors.passwordincorrect}
                                 </span>

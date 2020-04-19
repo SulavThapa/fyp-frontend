@@ -95,10 +95,10 @@ class TestNav extends React.Component {
                       </a>
                     </Link>
                   </li>
-                  <li className="nav-item px-3">
+                  <li className="nav-item">
                     <Link to="/register">
                       <a className="nav-link">
-                        <FontAwesomeIcon className="side" icon="registered" style={{color: '#32e1ff'}}/>
+                        <FontAwesomeIcon className="side" icon="registered" style={{color: '#ff68d3'}}/>
                         Register
                       </a>
                     </Link>

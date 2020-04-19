@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
 import TestNav from "../NavBar/testNav";
-import {Card} from "react-bootstrap";
+import {Card, Button} from "react-bootstrap";
 
 class Register extends Component {
     constructor() {
@@ -19,12 +19,6 @@ class Register extends Component {
         };
     }
 
-    componentDidMount() {
-        // If logged in and user navigates to Register page, should redirect them to dashboard
-        // if (this.props.auth.isAuthenticated) {
-        //     this.props.history.push("/admin");
-        // }
-    }
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.errors) {
@@ -60,7 +54,7 @@ class Register extends Component {
                 <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4">
                     <div
                         className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h2 className="text-muted" style={{left: '3%', marginTop: '1%'}}>Bus History</h2>
+                        <h2 className="text-muted" style={{left: '3%', marginTop: '1%'}}>Register New Admin</h2>
                     </div>
                     <Card className="h-75 d-inline-block shadow-sm" style={{height: '100%', width: '100%', padding: '1%'}}>
                         <div>
@@ -68,73 +62,65 @@ class Register extends Component {
                         <div className="row">
 
                             <div className="col s8 offset-s2" >
-                                <div className="col s12" style={{ paddingLeft: "11.250px", fontFamily: 'Chalkboard SE' }}>
-                                    <h4>
-                                        <b>Register</b> below
-                                    </h4>
-                                    <p className="black-text text-darken-1">
-                                        Already have an account? <Link to="/login">Log in</Link>
-                                    </p>
-                                </div>
                                 <form noValidate onSubmit={this.onSubmit}>
                                     <div className="input-field col s12">
+                                        <label htmlFor="name" style={{fontFamily: 'monospace', fontSize: '18px'}}>Name</label>
                                         <input
                                             onChange={this.onChange}
                                             value={this.state.name}
                                             error={errors.name}
                                             id="name"
                                             type="text"
-                                            className={classnames("", {
+                                            className={classnames("form-control", {
                                                 invalid: errors.name
                                             })}
                                         />
-                                        <label htmlFor="name">Name</label>
-                                        <span className="red-text">{errors.name}</span>
+                                        <span style={{color: 'red'}}>{errors.name}</span>
                                     </div>
                                     <div className="input-field col s12">
+                                        <label htmlFor="email" style={{fontFamily: 'monospace', fontSize: '18px'}}>Email</label>
                                         <input
                                             onChange={this.onChange}
                                             value={this.state.email}
                                             error={errors.email}
                                             id="email"
                                             type="email"
-                                            className={classnames("", {
+                                            className={classnames("form-control", {
                                                 invalid: errors.email
                                             })}
                                         />
-                                        <label htmlFor="email">Email</label>
-                                        <span className="red-text">{errors.email}</span>
+                                        <span style={{color: 'red'}}>{errors.email}</span>
                                     </div>
                                     <div className="input-field col s12">
+                                        <label htmlFor="password" style={{fontFamily: 'monospace', fontSize: '18px'}}>Password</label>
                                         <input
                                             onChange={this.onChange}
                                             value={this.state.password}
                                             error={errors.password}
                                             id="password"
                                             type="password"
-                                            className={classnames("", {
+                                            className={classnames("form-control", {
                                                 invalid: errors.password
                                             })}
                                         />
-                                        <label htmlFor="password">Password</label>
-                                        <span className="red-text">{errors.password}</span>
+                                        <span style={{color: 'red'}}>{errors.password}</span>
                                     </div>
                                     <div className="input-field col s12">
+                                        <label htmlFor="password2" style={{fontFamily: 'monospace', fontSize: '18px'}}>Confirm Password</label>
                                         <input
                                             onChange={this.onChange}
                                             value={this.state.password2}
                                             error={errors.password2}
                                             id="password2"
                                             type="password"
-                                            className={classnames("", {
+                                            className={classnames("form-control", {
                                                 invalid: errors.password2
                                             })}
                                         />
-                                        <label htmlFor="password2">Confirm Password</label>
-                                        <span className="red-text">{errors.password2}</span>
+                                        <span style={{color: 'red'}}>{errors.password2}</span>
                                     </div>
                                     <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                                        <button
+                                        <Button variant="primary"
                                             style={{
                                                 width: "150px",
                                                 borderRadius: "3px",
@@ -145,7 +131,7 @@ class Register extends Component {
                                             className="btn btn-large waves-effect waves-light hoverable blue accent-3"
                                         >
                                             Sign up
-                                        </button>
+                                        </Button>
                                     </div>
                                 </form>
                             </div>
