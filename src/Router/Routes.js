@@ -6,6 +6,7 @@ import Error from '../Components/Pages/ErrorPage';
 import TableDesign from "../Components/Tables/Table";
 import BusInfo from "../Components/Pages/BusInfo";
 import PrivateRoute from '../Components/private-route/PrivateRoute';
+import Register from "../Components/Pages/Register";
 
 class RoutePage extends Component {
   render() {
@@ -17,6 +18,7 @@ class RoutePage extends Component {
             <PrivateRoute path="/admin" component={NewAdmin} />
             <PrivateRoute path="/details" component={TableDesign} />
             <PrivateRoute path="/busDetails" component={BusInfo} />
+            <PrivateRoute path="/register" component={Register} />
             <PrivateRoute component={Error} />
           </Switch>
         </div>
