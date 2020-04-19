@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import New from '../Components/Pages/Home';
+import Home from '../Components/Pages/Home';
 import NewAdmin from '../Components/Pages/Admin';
 import Error from '../Components/Pages/ErrorPage';
 import TableDesign from "../Components/Tables/Table";
 import BusInfo from "../Components/Pages/BusInfo";
-import BusHistory from "../Components/Pages/History";
+import PrivateRoute from '../Components/private-route/PrivateRoute';
 
-
-class RoutePage extends React.Component {
+class RoutePage extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="App">
+        <Route exact path="/" component={Home} />
           <Switch>
-            <Route path="/" component={New} exact />
-            <Route path="/admin" component={NewAdmin} />
-            <Route path="/details" component={TableDesign} />
-            <Route path="/busDetails" component={BusInfo} />
-            <Route path="/busHistory" component={BusHistory} />
-            <Route component={Error} />
+            <PrivateRoute path="/admin" component={NewAdmin} />
+            <PrivateRoute path="/details" component={TableDesign} />
+            <PrivateRoute path="/busDetails" component={BusInfo} />
+            <PrivateRoute component={Error} />
           </Switch>
         </div>
       </Router>

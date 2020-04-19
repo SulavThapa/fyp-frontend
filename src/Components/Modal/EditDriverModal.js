@@ -21,10 +21,11 @@ class EditDriverModal extends React.Component{
   };
 
   handleSubmit(e){
-    if(!Number(this.state.id) || !Number(this.state.phone)){
-      e.preventDefault();
-      alert('Must be number')
-    }else{
+    // if(!Number(this.state.id) || !Number(this.state.phone)){
+    //   e.preventDefault();
+    //   alert('Must be number')
+    // }else{
+      // e.preventDefault();
       axios.put(`http://localhost:5000/drivers/${this.props._id}`,
           {
             id: `${this.state.id}` === "" ? `${this.props.id}` : `${this.state.id}`,
@@ -47,7 +48,7 @@ class EditDriverModal extends React.Component{
           .catch(err => {
             console.log(`This is the ${err} error.`)
           })
-    }
+    // }
   };
 
   render(){
