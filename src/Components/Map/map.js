@@ -8,21 +8,28 @@ import axios from "axios";
 class SimpleMap extends React.Component{
   state = {
     lat: '',
-    lon: ''
+    lon: '',
+    interval: null
   };
   componentDidMount()
   {
-    axios.get(`https://api.thingspeak.com/channels/1021842/feeds.json?api_key=LIN8G7PKND7MMP6E&results=1`)
-      .then(res => {
-        this.setState({
-          lat: res.data.feeds[0].field1,
-          lon: res.data.feeds[0].field2
-        });
-        console.log(res);
-        console.log(this.state.lat);
-        console.log(this.state.lon);
-      }).catch(err => console.log('Cannot access', err));
+      this.getData();
+      this.state.interval = setInterval(this.getData.bind(this), 5000)
   }
+    componentWillUnmount() {
+        clearInterval(this.state.interval);
+    }
+
+  getData = () => {
+      axios.get(`https://api.thingspeak.com/channels/1021842/feeds.json?api_key=LIN8G7PKND7MMP6E&results=1`)
+          .then(res => {
+              this.setState({
+                  lat: res.data.feeds[0].field1,
+                  lon: res.data.feeds[0].field2
+              });
+              console.log(res);
+          }).catch(err => console.log('Cannot access', err));
+  };
 
   getMapOptions = () => {
     return {
@@ -35,8 +42,6 @@ class SimpleMap extends React.Component{
 render(){
   let lati = this.state.lat;
   let longi = this.state.lon;
-  console.log(lati);
-  console.log(longi);
   return (
     <div style={{ height: '83vh', width: '100%' }}>
       <GoogleMapReact

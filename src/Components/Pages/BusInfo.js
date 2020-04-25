@@ -3,8 +3,6 @@ import TestNav from "../NavBar/testNav";
 import MyVerticallyCenteredModal from "../Modal/Modal";
 import {Button, Card, Table} from "react-bootstrap";
 import axios from 'axios';
-import MyVerticallyCenteredModalEdit from "../Modal/EditModal";
-import {Link} from "react-router-dom";
 import EditDriverModal from "../Modal/EditDriverModal";
 
 

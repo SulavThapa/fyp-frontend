@@ -26,7 +26,6 @@ class TestNav extends React.Component {
 
     return (
       <React.Fragment>
-
         <nav className="navbar navbar-dark fixed-top bg-secondary flex-md-nowrap p-0 shadow" style={{backgroundColor: "rgba(92,113,116,0.57)"}}>
           <Link to="/admin">
             <a className="navbar-brand col-sm-3 col-md-2 mr-0">

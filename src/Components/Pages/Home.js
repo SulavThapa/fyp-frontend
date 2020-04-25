@@ -78,7 +78,7 @@ class Home extends Component {
                                 invalid: errors.email || errors.emailnotfound
                               })}
                                />
-                                <span style={{color: 'red', opacity: '70%'}}>
+                                <span style={{color: 'red'}}>
                                     {errors.email}
                                     {errors.emailnotfound}
                                 </span>
@@ -96,7 +96,7 @@ class Home extends Component {
                                 invalid: errors.password || errors.passwordincorrect
                               })}
                                />
-                               <span style={{color: 'red', opacity: '70%'}}>
+                               <span style={{color: 'red'}}>
                                     {errors.password}
                                     {errors.passwordincorrect}
                                 </span>
