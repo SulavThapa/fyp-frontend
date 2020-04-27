@@ -27,8 +27,8 @@ class SimpleMap extends React.Component{
                   lat: res.data.feeds[0].field1,
                   lon: res.data.feeds[0].field2
               });
-              console.log(res);
           }).catch(err => console.log('Cannot access', err));
+      console.log('Refresh every 5 second');
   };
 
   getMapOptions = () => {
@@ -70,7 +70,7 @@ class LiveMap extends React.Component{
           className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
           <h2 className="text-muted" style={{fontFamily: 'monospace', fontSize: '35px'}}>Maps</h2>
         </div>
-        <Card className="100%" style={{backgroundColor: '#999'}}>
+        <Card style={{backgroundColor: '#999'}}>
           <SimpleMap/>
         </Card>
       </React.Fragment>

@@ -27,6 +27,7 @@
     "react-bootstrap-sidebar": "0.0.1",
     "react-dom": "^16.11.0",
     "react-form-input-validation": "^2.0.3",
+    "react-google-maps": "^9.4.5",
     "react-modal": "^3.11.1",
     "react-popupbox": "^2.0.8",
     "react-redux": "^7.2.0",
