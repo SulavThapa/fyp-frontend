@@ -21,7 +21,7 @@ class BusInfo extends React.Component{
         this.setState({drivers: res.data});
         console.log(res);
       }).catch(err => console.log('cannot access',err));
-  }  
+  }
 
   handleDelete = _id => {
     axios.delete(`http://localhost:5000/drivers/${_id}`)
@@ -33,7 +33,7 @@ class BusInfo extends React.Component{
   };
 
   render() {
-    const {drivers, _id, id, fullName, temporaryAddress, permanentAddress, phone, maritalStatus} = this.state;
+    const {drivers, _id, id, busNumber, busRoute, fullName, temporaryAddress, permanentAddress, phone, maritalStatus} = this.state;
     let addModalClose = () => this.setState({addModalShow : false});
     return(
         <React.Fragment>
@@ -51,6 +51,8 @@ class BusInfo extends React.Component{
                 <thead className="thead-dark">
                 <tr style={{height: '40px'}}>
                   <th>S.N</th>
+                  <th>Bus Number</th>
+                  <th>Bus Route</th>
                   <th>Full Name</th>
                   <th>Temporary Address</th>
                   <th>Permanent Address</th>
@@ -64,6 +66,8 @@ class BusInfo extends React.Component{
                   {this.state.drivers.map( driver =>
                   <tr style={{height: '35px'}}>
                     <td>{driver.id}</td>
+                    <td>{driver.busNumber}</td>
+                    <td>{driver.busRoute}</td>
                     <td>{driver.fullName}</td>
                     <td>{driver.temporaryAddress}</td>
                     <td>{driver.permanentAddress}</td>
@@ -75,6 +79,8 @@ class BusInfo extends React.Component{
                         addModalShow: true,
                         _id: driver._id,
                         id: driver.id,
+                        busNumber: driver.busNumber,
+                        busRoute: driver.busRoute,
                         fullName: driver.fullName,
                         temporaryAddress: driver.temporaryAddress,
                         permanentAddress: driver.permanentAddress,
@@ -88,6 +94,8 @@ class BusInfo extends React.Component{
                         onHide = {addModalClose}
                         _id = {_id}
                         id = {id}
+                        busNumber = {busNumber}
+                        busRoute = {busRoute}
                         fullName = {fullName}
                         temporaryAddress = {temporaryAddress}
                         permanentAddress = {permanentAddress}

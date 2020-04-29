@@ -9,6 +9,8 @@ class EditDriverModal extends React.Component{
   }
   state = {
     id: '',
+    busNumber:'',
+    busRoute: '',
     fullName: '',
     temporaryAddress: '',
     permanentAddress: '',
@@ -93,6 +95,37 @@ class EditDriverModal extends React.Component{
                       defaultValue={this.props.fullName}
                       name="fullName"
                       onChange={this.handleChange}>
+                    </input>
+                  </div>
+                </Col>
+              </Row>
+              <br/>
+              <Row>
+                <Col>
+                  <div className="form-group">
+                    <label>Id</label>
+                    <input
+                        className="form-control"
+                        placeholder="Bus Number"
+                        type="text"
+                        disabled
+                        defaultValue={this.props.busNumber}
+                        name="busNumber"
+                        onChange={this.handleChange}>
+                    </input>
+                  </div>
+                </Col>
+                <Col>
+                  <div className="form-group">
+                    <label>Bus Route</label>
+                    <input
+                        className="form-control"
+                        placeholder="From - To"
+                        type="text"
+                        disabled
+                        defaultValue={this.props.busRoute}
+                        name="busRoute"
+                        onChange={this.handleChange}>
                     </input>
                   </div>
                 </Col>

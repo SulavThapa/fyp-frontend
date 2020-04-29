@@ -6,6 +6,8 @@ class FormFunc extends React.Component {
 
   state = {
     id: '',
+    busNumber:'',
+    busRoute: '',
     fullName: '',
     temporaryAddress: '',
     permanentAddress: '',
@@ -26,6 +28,8 @@ class FormFunc extends React.Component {
       axios.post(`http://localhost:5000/drivers`,
           {
             id: `${this.state.id}`,
+            busNumber: `${this.state.busNumber}`,
+            busRoute: `${this.state.busRoute}`,
             fullName: `${this.state.fullName}`,
             temporaryAddress: `${this.state.temporaryAddress}`,
             permanentAddress: `${this.state.permanentAddress}`,
@@ -92,6 +96,33 @@ class FormFunc extends React.Component {
             </Col>
           </Row>
           <br/>
+          <Row>
+            <Col>
+              <div className="form-group">
+                <label>Bus Number</label>
+                <input
+                    className="form-control"
+                    placeholder="Bus Number"
+                    type="text"
+                    name="busNumber"
+                    onChange={this.handleChange}>
+                </input>
+              </div>
+            </Col>
+            <Col>
+              <div className="form-group">
+                <label>Bus Route</label>
+                <input
+                    className="form-control"
+                    placeholder="From - To"
+                    type="text"
+                    name="busRoute"
+                    onChange={this.handleChange}>
+                </input>
+              </div>
+            </Col>
+          </Row>
+          <br />
           <Row>
             <Col>
               <div className="form-group">
