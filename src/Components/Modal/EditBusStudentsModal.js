@@ -14,6 +14,7 @@ class EditBusStudentsModal extends React.Component{
     section: '',
     parentName: '',
     parentNumber: '',
+    parentsEmail: '',
     address: ''
   };
 
@@ -22,17 +23,19 @@ class EditBusStudentsModal extends React.Component{
   };
 
   handleSubmit(e){
-    if( !Number(this.state.phone)){
-      e.preventDefault();
-      alert('Must be number')
-    }else{
-      axios.put(`http://localhost:5000/busOneStudents/${this.props._id}`,
+    // if( !Number(this.state.phone)){
+    //   e.preventDefault();
+    //   alert('Must be number')
+    // }else{
+    //   e.preventDefault();
+    axios.put(`http://localhost:5000/busOneStudents/${this.props._id}`,
           {
             id: `${this.state.id}` === "" ? `${this.props.id}` : `${this.state.id}`,
             studentName: `${this.state.studentName}` === "" ? `${this.props.studentName}` : `${this.state.studentName}`,
             class: `${this.state.class}` === "" ? `${this.props.grade}` : `${this.state.class}`,
             section: `${this.state.section}` === "" ? `${this.props.section}` : `${this.state.section}`,
             parentName: `${this.state.parentName}` === "" ? `${this.props.parentName}` : `${this.state.parentName}`,
+            parentsEmail: `${this.state.parentsEmail}` === "" ? `${this.props.parentsEmail}` : `${this.state.parentsEmail}`,
             parentNumber: `${this.state.parentNumber}` === "" ? `${this.props.parentNumber}` : `${this.state.parentNumber}`,
             address: `${this.state.address}` === "" ? `${this.props.address}` : `${this.state.address}`
           } ,
@@ -49,7 +52,7 @@ class EditBusStudentsModal extends React.Component{
           .catch(err => {
             console.log(`This is the ${err} error.`)
           })
-    }
+    // }
   };
 
   render(){
@@ -126,22 +129,22 @@ class EditBusStudentsModal extends React.Component{
                     </input>
                   </div>
                 </Col>
-              </Row>
-              <br/>
-              <Row>
                 <Col>
                   <div className="form-group">
                     <label>Parent Name</label>
                     <input
-                      className="form-control"
-                      placeholder="Parent Name"
-                      type="text"
-                      defaultValue={this.props.parentName}
-                      name="parentName"
-                      onChange={this.handleChange}>
+                        className="form-control"
+                        placeholder="Parent Name"
+                        type="text"
+                        defaultValue={this.props.parentName}
+                        name="parentName"
+                        onChange={this.handleChange}>
                     </input>
                   </div>
                 </Col>
+              </Row>
+              <br/>
+              <Row>
                 <Col>
                   <div className="form-group">
                     <label>Parent Number</label>
@@ -152,6 +155,19 @@ class EditBusStudentsModal extends React.Component{
                       defaultValue={this.props.parentNumber}
                       name="parentNumber"
                       onChange={this.handleChange}>
+                    </input>
+                  </div>
+                </Col>
+                <Col>
+                  <div className="form-group">
+                    <label>Parent Email</label>
+                    <input
+                        className="form-control"
+                        placeholder="Parent Email"
+                        type="text"
+                        defaultValue={this.props.parentsEmail}
+                        name="parentsEmail"
+                        onChange={this.handleChange}>
                     </input>
                   </div>
                 </Col>

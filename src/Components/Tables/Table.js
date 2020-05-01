@@ -7,7 +7,7 @@ import EditBusStudentsModal from "../Modal/EditBusStudentsModal";
 import EditDriverModal from "../Modal/EditDriverModal";
 
 class TableDesign extends React.Component {
-  
+
   state = {
     busOneStudents: [],
     addModalShow: false
@@ -32,7 +32,7 @@ class TableDesign extends React.Component {
   };
 
   render() {
-    const {busOneStudents, _id, id, studentName, grade, section, parentName, parentNumber, address} = this.state;
+    const {busOneStudents, _id, id, studentName, grade, section, parentName, parentNumber, parentsEmail, address} = this.state;
     let addModalClose = () => this.setState({addModalShow : false});
     return (
         <React.Fragment>
@@ -53,6 +53,7 @@ class TableDesign extends React.Component {
                   <th>Section</th>
                   <th>Parent Name</th>
                   <th>Parents Number</th>
+                  <th>Parents Email</th>
                   <th>Address</th>
                   <th>Edit</th>
                   <th>Delete</th>
@@ -67,6 +68,7 @@ class TableDesign extends React.Component {
                   <td>{busOneStudent.section}</td>
                   <td>{busOneStudent.parentName}</td>
                   <td>{busOneStudent.parentNumber}</td>
+                  <td>{busOneStudent.parentsEmail}</td>
                   <td>{busOneStudent.address}</td>
                   <td>
                     <Button
@@ -80,6 +82,7 @@ class TableDesign extends React.Component {
                         section: busOneStudent.section,
                         parentName: busOneStudent.parentName,
                         parentNumber: busOneStudent.parentNumber,
+                        parentsEmail: busOneStudent.parentsEmail,
                         address: busOneStudent.address
                       })}
                     >Edit
@@ -94,6 +97,7 @@ class TableDesign extends React.Component {
                       section = {section}
                       parentName = {parentName}
                       parentNumber = {parentNumber}
+                      parentsEmail = {parentsEmail}
                       address = {address}
                     />
                   </td>

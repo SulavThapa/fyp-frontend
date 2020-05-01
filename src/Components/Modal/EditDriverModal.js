@@ -31,6 +31,8 @@ class EditDriverModal extends React.Component{
       axios.put(`http://localhost:5000/drivers/${this.props._id}`,
           {
             id: `${this.state.id}` === "" ? `${this.props.id}` : `${this.state.id}`,
+            busNumber: `${this.state.busNumber}` === "" ? `${this.props.busNumber}` : `${this.state.busNumber}`,
+            busRoute: `${this.state.busRoute}` === "" ? `${this.props.busRoute}` : `${this.state.busRoute}`,
             fullName: `${this.state.fullName}` === "" ? `${this.props.fullName}` : `${this.state.fullName}`,
             temporaryAddress: `${this.state.temporaryAddress}` === "" ? `${this.props.temporaryAddress}` : `${this.state.temporaryAddress}`,
             permanentAddress: `${this.state.permanentAddress}` === "" ? `${this.props.permanentAddress}` : `${this.state.permanentAddress}`,
