@@ -4,6 +4,21 @@ import jwt_decode from "jwt-decode";
 
 import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
 
+
+//get driver
+export const driver = drivers => dispatch => {
+    axios.get(`http://localhost:5000/drivers`, true)
+        .then(res => {
+            this.setState({drivers: res.data});
+            console.log(res);
+        })
+        .catch(err =>
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        );
+};
 // Register User
 export const registerUser = (userData, history) => dispatch => {
   axios

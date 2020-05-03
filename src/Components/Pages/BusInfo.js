@@ -4,7 +4,8 @@ import MyVerticallyCenteredModal from "../Modal/Modal";
 import {Button, Card, Table} from "react-bootstrap";
 import axios from 'axios';
 import EditDriverModal from "../Modal/EditDriverModal";
-
+import { driver } from "../../actions/authActions";
+import setAuthToken from "../../utils/setAuthToken";
 
 
 class BusInfo extends React.Component{
@@ -16,8 +17,14 @@ class BusInfo extends React.Component{
 
   componentDidMount()
   {
-    axios.get(`http://localhost:5000/drivers`)
-      .then(res => {
+    // const token = localStorage.jwtToken;
+    // const headers = { Authorization: `${token}` };
+    // let user = JSON.parse(sessionStorage.getItem('data'));
+    // const token = user.data.id;
+    const token = localStorage.jwtToken;
+    // setAuthToken(token);
+    axios.get(`http://localhost:5000/drivers`,{headers: {"Authorization" : `Bearer ${token}`} } )
+      .then((res) => {
         this.setState({drivers: res.data});
         console.log(res);
       }).catch(err => console.log('cannot access',err));

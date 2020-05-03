@@ -3,6 +3,8 @@ import GoogleMapReact from 'google-map-react';
 import Marker from './Marker';
 import {Card} from "react-bootstrap";
 import axios from "axios";
+import setAuthToken from "../../utils/setAuthToken";
+import {setCurrentUser} from "../../actions/authActions";
 
 
 class SimpleMap extends React.Component{
@@ -21,6 +23,10 @@ class SimpleMap extends React.Component{
     }
 
   getData = () => {
+      // localStorage.getItem("jwtToken", token);
+      localStorage.removeItem("jwtToken");
+      // Remove auth header for future requests
+      setAuthToken(false);
       axios.get(`https://api.thingspeak.com/channels/1021842/feeds.json?api_key=LIN8G7PKND7MMP6E&results=1`)
           .then(res => {
               this.setState({
